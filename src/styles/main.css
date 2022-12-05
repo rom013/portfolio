@@ -9,6 +9,10 @@
 .polygon{
     clip-path: polygon(20% 0, 100% 0, 100% 64%, 84% 100%, 0% 100%, 0% 100%, 0 36%);
 }
+.mold-pol{
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+}
+
 input[type = radio]{
     display: none;
 }
@@ -25,7 +29,26 @@ input[type = radio]{
     top: 25%;
 }
 
+.testff::-webkit-scrollbar {
+    width: 2px; 
+}
 
+.testff::-webkit-scrollbar-thumb {
+    background: #1976d2;
+}
+.testff::-webkit-scrollbar-track {
+    background: transparent;
+}
+body::-webkit-scrollbar {
+    width: 2px; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #1976d2;
+}
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
 
 @layer components{
     .btn-nav-down{
@@ -61,7 +84,7 @@ input[type = radio]{
 
 @keyframes energy {
     0%{
-        background-position-x: 0
+        background-position-x: 0;
     }
     100%{
         background-position-x: 100vw

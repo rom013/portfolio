@@ -5,7 +5,7 @@ export default function Profile() {
     const [level, setLevel] = useState(1)
 
     return (
-        <div className="h-screen flex items-center py-10" id="test">
+        <div className="h-screen min-h-[600px] flex items-center py-10" id="test">
             <div className="flex justify-center items-center max-w-7xl mx-auto px-6 gap-8 w-full">
                 <div className="flex flex-col items-center gap-8">
                     <div className="img-profile shadow-shadow-2">

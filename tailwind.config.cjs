@@ -20,7 +20,9 @@ module.exports = {
       },
       backgroundImage:{
         "banner" : "url(./src/assets/img/banner.png)",
-        "gradient-bg" : "linear-gradient(270deg, #121212 0%, #020A21 52.14%, #020A1F 100%);"
+        "gradient-bg" : "linear-gradient(270deg, #121212 0%, #020A21 52.14%, #020A1F 100%);",
+        "gradient-blue-pink" : "linear-gradient(89.99deg, #DB00FF 0.01%, #6100FF 81.57%, rgba(97, 0, 255, 0) 101.04%);",
+        "night-neon" : "url(./src/assets/img/green_neon_night.jpg)"
       }
     },
   },

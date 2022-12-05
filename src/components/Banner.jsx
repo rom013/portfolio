@@ -5,13 +5,13 @@ import {GithubLogo, InstagramLogo, LinkedinLogo, CaretDown } from "phosphor-reac
 import { useEffect, useState } from "react";
 
 export default function Banner(){
-    const [test, setTest] = useState()
+    const [scrollDown, setscrollDown] = useState()
     useEffect(()=>{
-        setTest(document.querySelector("#test"))
+        setscrollDown(document.querySelector("#test"))
     })
     
     return (
-        <div className="banner w-100 bg-stone-900 flex flex-col items-center justify-center relative bg-banner bg-cover bg-no-repeat bg-fixed">
+        <div className="banner min-h-[600px] w-100 bg-stone-900 flex flex-col items-center justify-center relative bg-banner bg-cover bg-no-repeat bg-fixed">
             <div className="flex flex-col items-center">
                 <div className="flex flex-col items-center mb-16">
                     <div className="w-32 h-32 rounded-full mb-10 bg-gradient-to-r p-[2px] from-blue-500 to-pink-600 shadow-shadow-1">
@@ -30,7 +30,7 @@ export default function Banner(){
                 {/* <Btn text="PROJETOS"/> */}
 
                 <button type="button" onClick={()=>{
-                    test.scrollIntoView({behavior: "smooth"})
+                    scrollDown.scrollIntoView({behavior: "smooth"})
                 }} className="btn-nav-down animate-bounce hover:animate-none">
                     <CaretDown/>
                 </button>
