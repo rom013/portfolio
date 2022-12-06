@@ -41,7 +41,7 @@ export default function Profile() {
 function Bio(props){
     return(
         <>
-            <h3 className="text-gradient">Olá! Eu sou</h3>
+            <h3 className="text-gradient text-gradient">Olá! Eu sou</h3>
             <h2 className="text-4xl font-bold mb-11">Rômullo Melo</h2>
             
             { props.level==1?

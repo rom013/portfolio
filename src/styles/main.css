@@ -9,6 +9,12 @@
 .polygon{
     clip-path: polygon(20% 0, 100% 0, 100% 64%, 84% 100%, 0% 100%, 0% 100%, 0 36%);
 }
+.polygon-2{
+    clip-path: polygon(90% 0, 100% 40%, 100% 100%, 0% 100%, 0% 0%)
+}
+.polygon-3{
+    clip-path: polygon(27% 0, 100% 1%, 100% 100%, 0 100%, 0 27%);
+}
 .mold-pol{
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
 }
@@ -28,27 +34,40 @@ input[type = radio]{
     right: -40px;
     top: 25%;
 }
-
-.testff::-webkit-scrollbar {
+.btn-send{
+    position: relative
+}
+.btn-send::after, .btn-send::before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #020a1f;
+    display:block;
+    position: absolute;
+    bottom: -14px
+}
+.btn-send::before{
+    left: 50px
+}
+.testff::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 2px; 
 }
 
-.testff::-webkit-scrollbar-thumb {
+.testff::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
     background: #1976d2;
 }
-.testff::-webkit-scrollbar-track {
+.testff::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
     background: transparent;
-}
-body::-webkit-scrollbar {
-    width: 2px; 
 }
 
-body::-webkit-scrollbar-thumb {
-    background: #1976d2;
+.text-gradient{
+    background: linear-gradient(90.09deg, #00B2FF 0.07%, #6100FF 98.32%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
-body::-webkit-scrollbar-track {
-    background: transparent;
-}
+
 
 @layer components{
     .btn-nav-down{
