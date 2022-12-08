@@ -5,9 +5,9 @@ import Progress from './components/Progress'
 import { BoxProject, BoxCellphone } from './components/Box'
 import { BtnLink } from './components/Btn'
 import { GithubLogo, CodepenLogo, PaperPlane, InstagramLogo, LinkedinLogo, DiscordLogo } from 'phosphor-react'
+import Form from './components/Form'
 
 function App() {
-
 	return (
 		<>
 			{/* <BoxCellphone/> */}
@@ -56,17 +56,7 @@ function App() {
 				<div className='p-6 mx-auto w-full max-w-6xl flex gap-5 flex-wrap'>
 					<div className='flex-1'>
 						<h3 className='text-gradient font-Orbitron text-2xl font-bold'>Entre em contato comigo</h3>
-						<form 
-							className='flex flex-col gap-4 max-w-lg mt-8 text-white'
-							onSubmit={(e)=>{e.preventDefault()}}
-						>
-							<input type="email" required placeholder='Email' id="email" className='py-3 px-6 bg-blue-900/[.25] focus:outline-none' autoComplete='true' />
-							<textarea name="text" id="areaText" cols="30" rows="10" required placeholder='Mensagem' maxLength={350} className='py-3 px-6 bg-blue-900/[.25] h-[220px] resize-none focus:outline-none' autoComplete='true' />
-
-							<button type="submit" className='hover:bg-gradient-2 text-2xl flex items-center bg-blue-300 gap-3 px-6 py-1 w-fit shadow-shadow-3 polygon-2 btn-send'>
-								Enviar<PaperPlane size={24} className="rotate-90" />
-							</button>
-						</form>
+						<Form/>
 					</div>
 					<div className='flex-1 flex flex-col justify-center items-center gap-4'>
 						<Container icon={InstagramLogo} nick={"@romu_013"} link={"#"}/>
