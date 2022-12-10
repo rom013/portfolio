@@ -29,9 +29,9 @@ export default function Banner(){
                 </div>
                 
                 <div className="flex justify-between px-6 mb-10 gap-6">
-                    <BtnLinkSmall nome={InstagramLogo}/>
-                    <BtnLinkSmall nome={LinkedinLogo}/>
-                    <BtnLinkSmall nome={GithubLogo}/>
+                    <BtnLinkSmall nome={InstagramLogo} link={"http://instagram.com/romu_013"}/>
+                    <BtnLinkSmall nome={LinkedinLogo} link={"https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227"}/>
+                    <BtnLinkSmall nome={GithubLogo} link={"https://github.com/rom013"}/>
                 </div>
 
                 {/* <Btn text="PROJETOS"/> */}

@@ -2,11 +2,6 @@ import { useState } from "react"
 import { PaperPlane } from "phosphor-react"
 
 
-
-
-
-
-
 export default function Form(){
     const [email, setEmail] = useState({})
     const [message, setMessage] = useState({
@@ -21,7 +16,12 @@ export default function Form(){
                 setErrorMessage(true)
             }
             else {
-                setErrorMessage(false)
+                if(values.message.includes('     ')){
+                    setErrorMessage(true)
+                }
+                else{
+                    setErrorMessage(false)
+                }
             }
         }
         if(values.email != undefined){
@@ -35,12 +35,12 @@ export default function Form(){
     }
     return(
         <form 
-            // action='https://api.staticforms.xyz/submit'
+            action='https://api.staticforms.xyz/submit'
             method='POST'
             className='flex flex-col gap-4 max-w-lg mt-8 text-white'
-            onSubmit={(e)=>{
-                e.preventDefault()
-            }}
+            // onSubmit={(e)=>{
+            //     e.preventDefault()
+            // }}
         >
             <input type="hidden" name="accessKey" value="a774308e-744c-4f58-aff5-f3f5c45fd670"/>
             <input type="hidden" name="redirectTo" value="http://localhost:5173/"/>
@@ -73,19 +73,19 @@ export default function Form(){
                     onChange={(e)=>{
                         setMessage({message: e.target.value})
                     }}
-                    onBlur={(e)=>{
+                    onInput={(e)=>{
                         validate(message)
                     }}
                 >
                     
                 </textarea>
-                <span className="absolute bottom-3 right-3 text-gray-600">
-                    {message.message.length} / 300
+                <span className={`absolute bottom-3 right-3 text-gray-600 font-Orbitron text-xs ${message.message.length >= 100 ? "text-green-400 text-shadow": null}`}>
+                    {message.message.length}/300
                 </span>  
 
             </div>
 
-            <button type="submit" disabled={!errorEmail && !errorMessage ? (false, console.log(errorEmail, errorMessage)) : true} className={`disabled:bg-cyan-700 disabled:cursor-not-allowed  hover:bg-gradient-2 text-2xl flex items-center bg-blue-700 gap-3 px-6 py-1 w-fit shadow-shadow-3 polygon-2 btn-send transition duration-500 focus:shadow-shadow-3 `}>
+            <button type="submit" disabled={!errorEmail && !errorMessage ? false : true} className={`disabled:bg-cyan-700 disabled:cursor-not-allowed  hover:bg-gradient-2 text-2xl flex items-center bg-blue-700 gap-3 px-6 py-1 w-fit shadow-shadow-3 polygon-2 btn-send transition duration-500 focus:shadow-shadow-3 `}>
                 Enviar<PaperPlane size={24} className="rotate-90" />
             </button>
         </form>

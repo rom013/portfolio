@@ -2,15 +2,34 @@ import './styles/main.css'
 import Banner from './components/Banner'
 import Profile from './components/Profile'
 import Progress from './components/Progress'
-import { BoxProject, BoxCellphone } from './components/Box'
+import { BoxProject, BoxCellphone, Console } from './components/Box'
 import { BtnLink } from './components/Btn'
-import { GithubLogo, CodepenLogo, PaperPlane, InstagramLogo, LinkedinLogo, DiscordLogo } from 'phosphor-react'
+import { GithubLogo, CodepenLogo, InstagramLogo, LinkedinLogo, DiscordLogo } from 'phosphor-react'
 import Form from './components/Form'
+import { useState } from 'react'
+
+const icons = {
+	"html" : <i className="devicon-html5-plain colored" title="html5"/>,
+	"css" : <i className="devicon-css3-plain colored" title='css'/>,
+	"js" : <i className="devicon-javascript-plain colored" title='javascript'/>,
+	"react" : <i className="devicon-react-original colored" title='reactJS'/>,
+	"tailwind" : <i className="devicon-tailwindcss-plain colored" title='tailwindcss'/>,
+	"node" : <i className="devicon-nodejs-plain colored" title='nodeJs'/>,
+	"mysql" : <i className="devicon-mysql-plain colored" title='MySQL'/>,
+	"bootstrap" : <i className="devicon-bootstrap-plain colored" title='Bootstrap'/>
+}
 
 function App() {
+	const [openCell, setOpenCell] = useState(false)
+	setTimeout(()=>{
+		setOpenCell(true)
+	}, 30000)
+
+
 	return (
-		<>
-			{/* <BoxCellphone/> */}
+		<div>
+			{openCell ? <BoxCellphone/> : null}
+			{/* { openConsole ? <Console/> : null } */}
 			<Banner />
 			<Profile />
 			<div className='bar-energy'></div>
@@ -26,6 +45,8 @@ function App() {
 							<Progress progress={85} name={"HTML & CSS"} />
 							<Progress progress={80} name={"Javascript"} />
 							<Progress progress={50} name={"React JS"} />
+							<Progress progress={40} name={"Bootstap"} />
+							<Progress progress={30} name={"MySQL"} />
 							<Progress progress={30} name={"C#"} />
 						</ul>
 					</div>
@@ -34,18 +55,57 @@ function App() {
 
 			<div className='min-h-[600px]'>
 				<div className='p-6 mx-auto w-full max-w-6xl'>
-					<p className='text-white font-Orbitron text-4xl text-gradient mb-16'>Projetos</p>
+					<p className='text-white font-Orbitron text-4xl text-gradient mb-16  mt-4'>Projetos</p>
 
 					<div className='w-full flex gap-5 flex-wrap justify-center'>
-						<BoxProject name={"portifolio"} responsive={true} img={"banner.png"} git={"portifolio2"} />
-						<BoxProject name={"test"} responsive={false} img={"greenNeonNight.jpg"} git={"teste"} />
-						<BoxProject name={"portifolio"} responsive={true} img={"banner.png"} git={"portifolio2"} />
+						<BoxProject 
+							name={"Site - praia grande"} 
+							responsive={true} 
+							img={"banner.png"} 
+							git={"praia-grande"} 
+							icons={
+								[
+									icons.html,
+									icons.css,
+									icons.js,
+									icons.bootstrap
+								]
+							}
+						/>
+						<BoxProject 
+							name={"Supertrunfo"}
+							responsive={false} 
+							img={"greenNeonNight.jpg"} 
+							git={"supertrunfo"} 
+							icons={
+								[
+									icons.html,
+									icons.css,
+									icons.js
+								]
+							}
+						/>
+						<BoxProject 
+							name={"melo-burgers"}
+							responsive={true} 
+							img={"night.jpg"} 
+							git={"melo-burgers"} 
+							icons={
+								[
+									icons.html,
+									icons.css,
+									icons.js,
+									icons.tailwind
+								]
+							}
+						/>
 					</div>
 
 
 					<p className='w-full text-center text-white mt-8 mb-6 text-xl'>Ver mais projetos</p>
 					<div className='w-full flex gap-5 flex-wrap justify-center'>
 						<BtnLink link={"https://codepen.io/rom013"} name={"codepen"} icon={CodepenLogo} />
+						<BtnLink link={"https://replit.com/@rom013"} name={"replit"} icon={"replit_logo.svg"} />
 						<BtnLink link={"https://github.com/rom013"} name={"github"} icon={GithubLogo} />
 					</div>
 				</div>
@@ -66,13 +126,13 @@ function App() {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 
 function Container(props){
 	return(
-		<a href={props.link} className='flex'>
+		<a href={props.link} className='flex hover:translate-x-2 transition'>
 			<div className='polygon-3 w-12 h-12 bg-gradient-2 flex items-center justify-center text-white'>
 				<props.icon size={32}/>
 			</div>
@@ -82,4 +142,5 @@ function Container(props){
 		</a>
 	)
 }
+
 export default App

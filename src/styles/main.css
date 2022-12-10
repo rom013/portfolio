@@ -67,7 +67,9 @@ input[type = radio]{
     background-clip: text;
     text-fill-color: transparent;
 }
-
+.text-shadow{
+    text-shadow: 0 0 4px rgb(74 222 128);
+}
 
 @layer components{
     .btn-nav-down{

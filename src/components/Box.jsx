@@ -1,3 +1,7 @@
+import phone from "../assets/audio/phone.mp3"
+import { useState } from "react"
+import { Phone, PhoneX } from "phosphor-react"
+
 export function BoxProject(props){
     const img = {"backgroundImage" : `url(/${props.img})`}
     return (
@@ -8,15 +12,17 @@ export function BoxProject(props){
                 </div>
                 <div className="w-80 h-80 bg-black/50 backdrop-blur-[2px] py-8 px-6">
                     <ul className="text-white flex flex-col gap-4">
-                        <li className="text-center mb-6">
-                            <span className="text-3xl font-bold uppercase font-RobotoCondensed">{props.name}</span>
+                        <li className="text-center">
+                            <span className="text-2xl font-bold uppercase font-RobotoCondensed">{props.name}</span>
                         </li>
                         <li className="flex flex-col">
                             <span>Técnologias:</span>
-                            <div className="flex gap-3">
-                                <span>1</span>
-                                <span>2</span>
-                                <span>3</span>
+                            <div className="flex gap-3 text-3xl py-2">
+                                {
+                                    props.icons.map((e)=>{
+                                        return e
+                                    })
+                                }
                             </div>
                         </li>
                         <li className="flex flex-col">
@@ -37,21 +43,86 @@ export function BoxProject(props){
 }
 
 export function BoxCellphone(){
-    return (
-        <div className="h-80 w-52 fixed bottom-0 right-14 bg-purple-900/50 backdrop-blur-[1px] z-50 border border-blue-300 p-4">
-            <div className="flex flex-col justify-center h-full gap-16">
-                <div className="flex flex-col w-full justify-center items-center">
-                    <div className="rounded-full w-20 h-20 overflow-hidden">
-                        <img src="https://github.com/rom013.png" alt="" />
-                    </div>
-                    <span className="text-white font-bold font-Orbitron mt-4">rom013</span>
-                </div>
+    let [te, setTe] = useState(true)
 
-                <div className="flex gap-5">
-                    <span className="flex-1 bg-red-600 h-6 text-white flex justify-center">(1)</span>
-                    <span className="flex-1 bg-green-600 h-6 text-white flex justify-center">(2)</span>
+    let [outcall, setOutcall] = useState(false)
+
+    function stop(){
+        document.querySelector("#phone").pause();
+    }
+
+    return (
+        <>
+            {te ? 
+                <div className="h-80 w-52 fixed bottom-0 right-14 bg-purple-900/50 backdrop-blur-[1px] z-50 border border-blue-300 p-4">
+                    <div className="">
+                        <audio src="phone.mp3" autoPlay loop id="phone"></audio>
+                    </div>
+                    <div className="flex flex-col justify-center h-full gap-16">
+                        <div className="flex flex-col w-full justify-center items-center">
+                            <div className="rounded-full w-20 h-20 overflow-hidden">
+                                <img src="https://github.com/rom013.png" alt="" />
+                            </div>
+                            <span className="text-white font-bold font-Orbitron mt-4">rom013</span>
+                            <span className={`text-purple-400 text-lg ${outcall ? "block" : "hidden"}`}>
+                                00:00
+                            </span>
+                        </div>
+
+                        <div className="flex justify-center gap-5">
+                            <button
+                                type="button"
+                                className="flex-1 bg-red-600/25 text-white flex justify-center cursor-pointer p-1 items-center shadow-red-900 shadow-shadow-3 hover:bg-red-500 transition duration-500"
+                                onClick={()=>{
+                                    stop()
+                                    setTe(false)
+                                }}
+                            >
+                                <PhoneX size={24}/>
+                            </button>
+                            <button 
+                                type="button"
+                                className={`flex-1 bg-green-600/25 text-white flex justify-center cursor-pointer ${outcall ? "hidden" : "block"} p-1 items-center shadow-green-600 shadow-shadow-3 hover:bg-green-500 transition duration-500`}
+                                onClick={()=>{
+                                    stop()
+                                    setOutcall(true)
+                                }}
+                            >
+                                <Phone size={24}/>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            : null
+            }
+        </>
+    )
+}
+
+
+export function Console(){
+    const [valueConsole, setValueConsole] = useState('')
+	const [screen, setScreen] = useState(false)
+
+    return(
+		<>
+			{
+                screen ? null
+        
+                :<div 
+                    className="h-screen w-full bg-black/70 fixed top-0 z-50 flex justify-center items-center text-white"
+                    // onClick={()=>{setScreen(true)}}
+                >
+                    <input 
+                        type="text" 
+                        className="text-black"
+                        // value={valueConsole}
+                        onChange={(e)=>{setValueConsole(e.value)}}
+                    />
+                </div>
+            }
+				
+			
+		</>
     )
 }
