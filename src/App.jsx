@@ -21,34 +21,44 @@ const icons = {
 
 function App() {
 	const [openCell, setOpenCell] = useState(false)
-	setTimeout(()=>{
-		setOpenCell(true)
-	}, 30000)
+	// setTimeout(()=>{
+	// 	setOpenCell(true)
+	// }, 30000)
 
 
 	return (
 		<div>
-			{openCell ? <BoxCellphone/> : null}
+			{/* {openCell ? <BoxCellphone/> : null} */}
 			{/* { openConsole ? <Console/> : null } */}
 			<Banner />
 			<Profile />
 			<div className='bar-energy'></div>
 
 			<div className="bg-night-neon min-h-[600px] h-screen bg-cover bg-fixed bg-no-repeat flex items-center justify-center">
-				<div className='mx-auto  w-full max-w-5xl p-6'>
-					<div className='h-[500px] bg-black/[.5] rounded p-10 border-y-blue-500 border-y-4 backdrop-blur-sm'>
+				<div className='mx-auto  w-full max-w-5xl p-0 sm:p-6'>
+					<div className='h-[500px] bg-black/[.5] rounded p-10 border-y-blue-500 border-y-4 backdrop-blur-sm '>
 						<span className='text-yellow-400 font-Orbitron font-bold text-4xl'>SKILLS</span>
 
-						<ul className='flex flex-col gap-3 mt-10 h-[300px] overflow-y-auto testff'>
-							<Progress progress={90} name={"Design UI"} />
-							<Progress progress={90} name={"Tailwind CSS"} />
-							<Progress progress={85} name={"HTML & CSS"} />
-							<Progress progress={80} name={"Javascript"} />
-							<Progress progress={50} name={"React JS"} />
-							<Progress progress={40} name={"Bootstap"} />
-							<Progress progress={30} name={"MySQL"} />
-							<Progress progress={30} name={"C#"} />
-						</ul>
+						<div className='mt-6'>
+							<div className='grid sm:grid-cols-4 grid-cols-2 w-full text-white font-Orbitron mb-2'>
+								<span></span>
+								<span className='hidden sm:block'>Básico</span>
+								<span className='text-center hidden sm:block'>Intermediario</span>
+								<span className='text-end hidden sm:block'>Avançado</span>
+
+								<span className='block sm:hidden text-end'>Nível</span>
+							</div>
+							<div className='grid sm:grid-cols-4 grid-cols-2 w-full gap-y-4 gap-x-3 overflow-auto h-80 testff'>
+								<Progress progress={100} name={"HTML & CSS"} />
+								<Progress progress={90} name={"Design UI"} />
+								<Progress progress={80} name={"Javascript"} />
+								<Progress progress={68} name={"Tailwind CSS"} />
+								<Progress progress={50} name={"React JS"} />
+								<Progress progress={40} name={"Bootstap"} />
+								<Progress progress={30} name={"MySQL"} />
+								<Progress progress={30} name={"C#"} />
+							</div>
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -112,8 +122,8 @@ function App() {
 
 			</div>
 
-			<div className='min-h-[600px] mt-16'>
-				<div className='p-6 mx-auto w-full max-w-6xl flex gap-5 flex-wrap'>
+			<div className='min-h-[600px] mt-16 pb-16'>
+				<div className='p-6 mx-auto w-full max-w-6xl flex gap-16 lg:gap-5 flex-wrap'>
 					<div className='flex-1'>
 						<h3 className='text-gradient font-Orbitron text-2xl font-bold'>Entre em contato comigo</h3>
 						<Form/>

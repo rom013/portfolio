@@ -5,13 +5,13 @@ export default function Profile() {
     const [level, setLevel] = useState(1)
 
     return (
-        <div className="h-screen min-h-[600px] flex items-center py-10" id="test">
-            <div className="flex justify-center items-center max-w-7xl mx-auto px-6 gap-8 w-full">
+        <div className="lg:h-screen min-h-[600px] flex items-center py-10" id="test">
+            <div className="flex-col lg:flex-row flex justify-center items-center max-w-7xl mx-auto px-6  gap-8 w-full lg:h-auto">
                 <div className="flex flex-col items-center gap-8">
-                    <div className="img-profile shadow-shadow-2">
+                    <div className="hidden lg:block img-profile shadow-shadow-2">
                         <img src="https://github.com/rom013.png" alt=""/>
                     </div>
-                    <div className="flex gap-5">
+                    <div className="flex gap-5 flex-wrap justify-center">
                         <button onClick={()=>{
                             setLevel(1)
                         }}>
@@ -30,7 +30,7 @@ export default function Profile() {
                         
                     </div>
                 </div>
-                <div className="bio w-10 h-full flex-1 text-white p-2">
+                <div className="bio lg:w-10 h-full flex-1 text-white p-2 w-full my-6">
                     <Bio level={level}/>
                 </div>
             </div>
@@ -92,13 +92,13 @@ function Bio(props){
                         </ul>
                         <ul className="flex flex-col gap-3">
                             <li>
-                                <span className="font-bold">Celular:</span> +55 (13) 99130-2403
+                                <span className="font-bold">Celular:</span><a href="https://api.whatsapp.com/send?phone=5513991302403&text=Ol%C3%A1%F0%9F%91%8B!!%20Estou%20vendo%20o%20seu%20portf%C3%B3lio." target="_blank" className="hover:text-purple-300 hover:underline"> +55 (13) 99130-2403</a>
                             </li>
                             <li>
                                 <span className="font-bold">Email:</span> romullomelo0130@gmail.com
                             </li>
                             <li>
-                                <span className="font-bold">Discord:</span> 
+                                <span className="font-bold">Linkdin:</span> <a href="https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227/" target="_blank" className="hover:text-purple-300 hover:underline">Rômullo Melo</a>
                             </li>
                         </ul>
                     </div>

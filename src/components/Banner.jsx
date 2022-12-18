@@ -1,6 +1,6 @@
 import BtnLinkSmall from "./Btn";
 
-import {GithubLogo, InstagramLogo, LinkedinLogo, CaretDown } from "phosphor-react";
+import {GithubLogo, InstagramLogo, LinkedinLogo, CaretDown, EnvelopeSimple } from "phosphor-react";
 import { useEffect, useState } from "react";
 
 export default function Banner(){
@@ -12,6 +12,7 @@ export default function Banner(){
     setInterval(()=>{
         setTimer(new Date().toGMTString())
     }, 1000)
+
     return (
         <div className="banner min-h-[600px] w-100 bg-stone-900 flex flex-col items-center justify-center relative bg-banner bg-cover bg-no-repeat bg-fixed">
             <span className="text-yellow-500 absolute top-7 right-9 font-mono">
@@ -29,9 +30,10 @@ export default function Banner(){
                 </div>
                 
                 <div className="flex justify-between px-6 mb-10 gap-6">
-                    <BtnLinkSmall nome={InstagramLogo} link={"http://instagram.com/romu_013"}/>
-                    <BtnLinkSmall nome={LinkedinLogo} link={"https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227"}/>
-                    <BtnLinkSmall nome={GithubLogo} link={"https://github.com/rom013"}/>
+                    <BtnLinkSmall nome={InstagramLogo} title={"Instagram"} link={"http://instagram.com/romu_013"}/>
+                    <BtnLinkSmall nome={LinkedinLogo} title={"Linkedin"} link={"https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227"}/>
+                    <BtnLinkSmall nome={GithubLogo} title={"Github"} link={"https://github.com/rom013"}/>
+                    <BtnLinkSmall nome={EnvelopeSimple} title={"Email"} link={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=romullomelo0130@gmail.com&body=Ol%C3%A1+R%C3%B4mullo"}/>
                 </div>
 
                 {/* <Btn text="PROJETOS"/> */}
