@@ -44,8 +44,6 @@ export default function Form(){
         >
             <input type="hidden" name="accessKey" value="a774308e-744c-4f58-aff5-f3f5c45fd670"/>
             <input type="hidden" name="redirectTo" value="http://localhost:5173/"/>
-            <input type="hidden" name="redirectTo" value="https://portifolio-rom013.vercel.app/"/>
-            
             
             <input 
                 type="text" 
