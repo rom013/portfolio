@@ -46,36 +46,24 @@ function Bio(props){
             
             { props.level==1?
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Estudo front-end há mais de 1 ano e atualmente estou cursando técnico em desenvolvimento de sistemas. Comecei a gostar da área no início de 2021, quando eu participei da Imersão Dev da Alura.
+                    Sou desenvolvedor FrontEnd há mais de 1 ano e atualmente estou no 1º módulo do curso de desenvolvimento de sistemas na ETEC Drª Ruth Cardoso. Tenho boas skills para construir um belo projeto de website.
                 </p>
 
             : null }
             { props.level==2?
             <>
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Estudo front-end há mais de 1 ano e atualmente estou cursando técnico em desenvolvimento de sistemas. Comecei a gostar da área no início de 2021, quando eu participei da Imersão Dev da Alura. 
+                    Sou desenvolvedor FrontEnd há mais de 1 ano, comecei os meus estudos em programação de forma voluntaria e sozinho. Hoje, eu consigo criar e desenvolver projetos do zero utilizando todos os meus conhecimentos em HTML, CSS e JavaScript. E pela primeira vez estou cursando um técnico focado na área de TI, atualmente estou no 1º módulo do curso técnico em desenvolvimento de sistemas na escola técnica Dra. Ruth Cardoso. 
                 </p>
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    A minha primeira linguagem de programação foi Javascript e em seguida HTML e CSS. Gradualmente fui conhecendo e testando novas tecnologias como: ReactJS, SASS e NodeJS.
-                </p>
-                <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Já trabalhei como Freelancer em uma cidade de GTA RP e também já desenvolvi um site de um jogo, todo do zero.    
-                </p>
-                <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Atualmente estou no primeiro modulo de desenvolvimento de sistemas na ETEC DRª Ruth Cardoso.     
+                    Já desenvolvi vários projetos ao longo desse tempo como, caderno virtual, gtaRP, websites e outros projetos.
                 </p>
             </>
             : null }
             { props.level==3?
                 <>
                     <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Estudo front-end há mais de 1 ano e atualmente estou cursando técnico em desenvolvimento de sistemas. Comecei a gostar da área no início de 2021, quando eu participei da Imersão Dev da Alura. 
-                    </p>
-                    <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                        A minha primeira linguagem de programação foi Javascript e em seguida HTML e CSS. Gradualmente fui conhecendo e testando novas tecnologias como: ReactJS, SASS e NodeJS.
-                    </p>
-                    <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                        Atualmente estou no primeiro modulo de desenvolvimento de sistemas na ETEC DRª Ruth Cardoso.     
+                        Sou desenvolvedor FrontEnd há mais de 1 ano, comecei os meus estudos em programação de forma voluntaria e sozinho. Hoje, estou cursando técnico em desenvolvimento em sistemas na escola técnica Dra. Ruth Cardoso. Gosto muito do que faço e pretendo melhorar mais ainda os meus conhecimentos na área. 
                     </p>
 
                     <div className="flex bg-[#212121] border border-blue-500 p-6 justify-between gap-5 mt-6  flex-wrap lg:flex-nowrap">
@@ -87,7 +75,7 @@ function Bio(props){
                                 <span className="font-bold">Endereço:</span> Santos - SP, Brasil
                             </li>
                             <li>
-                                <span className="font-bold">Experiência:</span> ~ 1 ano e 8 messes
+                                <span className="font-bold">Experiência:</span> <span>1 ano e 9 meses</span>
                             </li>
                         </ul>
                         <ul className="flex flex-col gap-3">
@@ -106,4 +94,27 @@ function Bio(props){
             : null }
         </> 
     )
+}
+
+function date(){
+    let year = 2021, month = 3
+    const currentYear = new Date().getFullYear()
+    let currentMonth = 0
+
+    year = currentYear - year
+    currentMonth = year * 12
+    
+    while(currentMonth > 12){
+        year++
+        currentMonth -= 12
+    }
+
+    // if(currentYear > year){
+    //     if(currentMonth < month){
+    //         month = month - currentMonth
+    //         year--
+    //     }
+    // }
+    return `${year} ano e ${currentMonth} messes`
+
 }

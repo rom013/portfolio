@@ -2,9 +2,10 @@ import './styles/main.css'
 import Banner from './components/Banner'
 import Profile from './components/Profile'
 import Progress from './components/Progress'
-import { BoxProject, BoxCellphone, Console } from './components/Box'
+import { BoxProject, BoxCellphone } from './components/Box'
+import { TerminalConsole } from './components/Terminal'
 import { BtnLink } from './components/Btn'
-import { GithubLogo, CodepenLogo, InstagramLogo, LinkedinLogo, DiscordLogo } from 'phosphor-react'
+import { GithubLogo, CodepenLogo, InstagramLogo, LinkedinLogo, DiscordLogo, Terminal, X } from 'phosphor-react'
 import Form from './components/Form'
 import { useState } from 'react'
 
@@ -21,15 +22,24 @@ const icons = {
 
 function App() {
 	const [openCell, setOpenCell] = useState(false)
+	// const [openConsole, setOpenConsole] = useState(false)
+
 	// setTimeout(()=>{
 	// 	setOpenCell(true)
 	// }, 30000)
 
-
 	return (
 		<div>
 			{/* {openCell ? <BoxCellphone/> : null} */}
-			{/* { openConsole ? <Console/> : null } */}
+			{/* { openConsole ? <TerminalConsole status={openConsole}/> : null } */}
+			
+			{/* <button 
+				className={`z-50 rounded-full bg-blue-400/10 border border-blue-400 w-14 h-14 text-white flex items-center justify-center fixed right-4 bottom-4`}
+				onClick={()=>{setOpenConsole(!openConsole)}}
+			>
+				{openConsole ? <X size={32}/> : <Terminal size={32}/>} 
+			</button> */}
+
 			<Banner />
 			<Profile />
 			<div className='bar-energy'></div>
@@ -43,7 +53,7 @@ function App() {
 							<div className='grid sm:grid-cols-4 grid-cols-2 w-full text-white font-Orbitron mb-2'>
 								<span></span>
 								<span className='hidden sm:block'>Básico</span>
-								<span className='text-center hidden sm:block'>Intermediario</span>
+								<span className='text-center hidden sm:block'>Intermediário</span>
 								<span className='text-end hidden sm:block'>Avançado</span>
 
 								<span className='block sm:hidden text-end'>Nível</span>
@@ -129,10 +139,10 @@ function App() {
 						<Form/>
 					</div>
 					<div className='flex-1 flex flex-col justify-center items-center gap-4'>
-						<Container icon={InstagramLogo} nick={"@romu_013"} link={"#"}/>
-						<Container icon={LinkedinLogo} nick={"rômullo melo"} link={"#"}/>
-						<Container icon={GithubLogo} nick={"@rom013"} link={"#"}/>
-						<Container icon={DiscordLogo} nick={"<rom013/>"} link={"#"}/>
+						<Container icon={InstagramLogo} nick={"@romu_013"} link={"https://instagram.com/romu_013/"}/>
+						<Container icon={LinkedinLogo} nick={"rômullo melo"} link={"https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227/"}/>
+						<Container icon={GithubLogo} nick={"@rom013"} link={"https://github.com/rom013"}/>
+						<Container icon={DiscordLogo} nick={"<rom013/> #5931"} link={""}/>
 					</div>
 				</div>
 			</div>
@@ -151,6 +161,10 @@ function Container(props){
 			</div>
 		</a>
 	)
+}
+
+function openTerminal(){
+
 }
 
 export default App

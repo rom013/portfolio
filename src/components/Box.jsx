@@ -1,6 +1,6 @@
 import phone from "../assets/audio/phone.mp3"
 import { useState } from "react"
-import { Phone, PhoneX } from "phosphor-react"
+import { KeyReturn, Phone, PhoneX } from "phosphor-react"
 
 export function BoxProject(props){
     const img = {"backgroundImage" : `url(/${props.img})`}
@@ -96,33 +96,5 @@ export function BoxCellphone(){
             : null
             }
         </>
-    )
-}
-
-
-export function Console(){
-    const [valueConsole, setValueConsole] = useState('')
-	const [screen, setScreen] = useState(false)
-
-    return(
-		<>
-			{
-                screen ? null
-        
-                :<div 
-                    className="h-screen w-full bg-black/70 fixed top-0 z-50 flex justify-center items-center text-white"
-                    // onClick={()=>{setScreen(true)}}
-                >
-                    <input 
-                        type="text" 
-                        className="text-black"
-                        // value={valueConsole}
-                        onChange={(e)=>{setValueConsole(e.value)}}
-                    />
-                </div>
-            }
-				
-			
-		</>
     )
 }

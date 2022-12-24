@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.infected *{
+    text-shadow: 1px 0 5px red, -2px 0 4px blue
+}
+
 .banner{
     height: calc(100vh + 64px)
 }
 
 .polygon{
     clip-path: polygon(20% 0, 100% 0, 100% 64%, 84% 100%, 0% 100%, 0% 100%, 0 36%);
+}
+.polygon-terminal{
+    clip-path: polygon(5% 0, 100% 0, 100% 75%, 95% 100%, 0% 100%, 0% 100%, 0 30%);
 }
 .polygon-2{
     clip-path: polygon(90% 0, 100% 40%, 100% 100%, 0% 100%, 0% 0%)
@@ -58,6 +66,52 @@ input[type = radio]{
 }
 .testff::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
     background: transparent;
+}
+
+.terminal::after{
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: rgb(0 178 255);
+    display: block;
+    position: absolute;
+    right: -50px
+}
+.terminal::before{
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: rgb(0 178 255);
+    display: block;
+    position: absolute;
+    left: -50px;
+    bottom: 0
+}
+
+.frame-command::after{
+    content: "";
+    background-image: url("frame.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 170px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: -3px;
+}
+.frame-command::before{
+    content: "";
+    background-image: url("frame.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 170px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    right: -3px;
+    transform: rotate(180deg)
 }
 
 .text-gradient{

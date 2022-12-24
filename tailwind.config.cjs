@@ -12,7 +12,8 @@ module.exports = {
       },
       fontFamily:{
         "Orbitron" : "'Orbitron', sans-serif",
-        "RobotoCondensed" : "'Roboto Condensed', sans-serif"
+        "RobotoCondensed" : "'Roboto Condensed', sans-serif",
+        "IBMMono" : "'IBM Plex Mono', monospace"
       },
       boxShadow:{
         "shadow-1" : "0px 0px 15px #99C8FF",

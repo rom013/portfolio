@@ -30,7 +30,7 @@ function levelExperience(level){
         return "Básico"
     }
     else if(level >= 40 &&  level < 70){
-        return "Intermediario"
+        return "Intermediário"
     }
     else if(level >= 70){
         return "Avançado"
