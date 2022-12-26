@@ -138,7 +138,7 @@ function App() {
 						<h3 className='text-gradient font-Orbitron text-2xl font-bold'>Entre em contato comigo</h3>
 						<Form/>
 					</div>
-					<div className='flex-1 flex flex-col justify-center items-center gap-4'>
+					<div className='flex-1 flex flex-col justify-center items-center lg:items-end gap-4'>
 						<Container icon={InstagramLogo} nick={"@romu_013"} link={"https://instagram.com/romu_013/"}/>
 						<Container icon={LinkedinLogo} nick={"rômullo melo"} link={"https://www.linkedin.com/in/r%C3%B4mullo-melo-124007227/"}/>
 						<Container icon={GithubLogo} nick={"@rom013"} link={"https://github.com/rom013"}/>

@@ -69,13 +69,13 @@ function Bio(props){
                     <div className="flex bg-[#212121] border border-blue-500 p-6 justify-between gap-5 mt-6  flex-wrap lg:flex-nowrap">
                         <ul className="flex flex-col gap-3">
                             <li>
-                                <span className="font-bold">Idade:</span> {new Date().getFullYear() - 2003} anos
+                                <span className="font-bold">Idade:</span> {date(2003, 8, true)}
                             </li>
                             <li>
                                 <span className="font-bold">Endereço:</span> Santos - SP, Brasil
                             </li>
                             <li>
-                                <span className="font-bold">Experiência:</span> <span>1 ano e 9 meses</span>
+                                <span className="font-bold">Experiência:</span> <span>{date(2021, 3, false)}</span>
                             </li>
                         </ul>
                         <ul className="flex flex-col gap-3">
@@ -96,25 +96,49 @@ function Bio(props){
     )
 }
 
-function date(){
-    let year = 2021, month = 3
-    const currentYear = new Date().getFullYear()
-    let currentMonth = 0
+function date(year, month, birth){
+    let yearX = 0
+    let monthX = 0
 
-    year = currentYear - year
-    currentMonth = year * 12
-    
-    while(currentMonth > 12){
-        year++
-        currentMonth -= 12
+    let startMonth = month
+    let startYear = year
+
+    let currentMonth = new Date().getMonth() + 1
+    let currentYear = new Date().getFullYear()
+
+    yearX = currentYear - startYear
+    if(currentMonth < startMonth){
+        yearX-- 
+        monthX = ((startMonth - currentMonth) - 12) * (-1)
+    }
+    else{
+        monthX = startMonth - currentMonth 
     }
 
-    // if(currentYear > year){
-    //     if(currentMonth < month){
-    //         month = month - currentMonth
-    //         year--
-    //     }
-    // }
-    return `${year} ano e ${currentMonth} messes`
+    if(monthX < -1){
+        monthX = monthX * (-1)
+    }
+
+    if(birth){
+        return `${yearX} anos`
+    }
+
+    else{
+        if(monthX == 1 && yearX == 1){
+            return `${yearX} ano e ${monthX} mês`
+        }
+        else if(yearX == 1 && monthX > 1){
+            return `${yearX} ano e ${monthX} meses`
+        }
+        else if(yearX == 1 && monthX == 0){
+            return `${yearX} ano e ${monthX} mês`
+        }
+        else if(monthX <= 1 && yearX > 1){
+            return `${yearX} anos e ${monthX} mês`
+        }
+        else{
+            return `${yearX} anos e ${monthX} meses`
+        }
+    }
 
 }

@@ -19,7 +19,7 @@ export function BoxProject(props){
                             <span>Técnologias:</span>
                             <div className="flex gap-3 text-3xl py-2">
                                 {
-                                    props.icons.map((e)=>{
+                                    props.icons.map((e, key)=>{
                                         return e
                                     })
                                 }
