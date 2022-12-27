@@ -22,23 +22,27 @@ const icons = {
 
 function App() {
 	const [openCell, setOpenCell] = useState(false)
-	// const [openConsole, setOpenConsole] = useState(false)
+	const [openConsole, setOpenConsole] = useState(false)
 
 	// setTimeout(()=>{
 	// 	setOpenCell(true)
 	// }, 30000)
 
+	function screenTerminal(X){
+		setOpenConsole(X)
+	}
+
 	return (
 		<div>
 			{/* {openCell ? <BoxCellphone/> : null} */}
-			{/* { openConsole ? <TerminalConsole status={openConsole}/> : null } */}
+			{ openConsole ? <TerminalConsole status={openConsole} screenTerminal={screenTerminal}/> : (null, document.body.classList.remove("overflow-hidden")) }
 			
-			{/* <button 
+			<button 
 				className={`z-50 rounded-full bg-blue-400/10 border border-blue-400 w-14 h-14 text-white flex items-center justify-center fixed right-4 bottom-4`}
 				onClick={()=>{setOpenConsole(!openConsole)}}
 			>
 				{openConsole ? <X size={32}/> : <Terminal size={32}/>} 
-			</button> */}
+			</button>
 
 			<Banner />
 			<Profile />

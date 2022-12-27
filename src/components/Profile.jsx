@@ -46,14 +46,14 @@ function Bio(props){
             
             { props.level==1?
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Sou desenvolvedor FrontEnd há mais de 1 ano e atualmente estou no 1º módulo do curso de desenvolvimento de sistemas na ETEC Drª Ruth Cardoso. Tenho boas skills para construir um belo projeto de website.
+                    Sou desenvolvedor FrontEnd há mais de 1 ano e atualmente estou no 2º módulo do curso de desenvolvimento de sistemas na ETEC Drª Ruth Cardoso. Tenho boas skills para construir um belo projeto de website.
                 </p>
 
             : null }
             { props.level==2?
             <>
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
-                    Sou desenvolvedor FrontEnd há mais de 1 ano, comecei os meus estudos em programação de forma voluntaria e sozinho. Hoje, eu consigo criar e desenvolver projetos do zero utilizando todos os meus conhecimentos em HTML, CSS e JavaScript. E pela primeira vez estou cursando um técnico focado na área de TI, atualmente estou no 1º módulo do curso técnico em desenvolvimento de sistemas na escola técnica Dra. Ruth Cardoso. 
+                    Sou desenvolvedor FrontEnd há mais de 1 ano, comecei os meus estudos em programação de forma voluntaria e sozinho. Hoje, eu consigo criar e desenvolver projetos do zero utilizando todos os meus conhecimentos em HTML, CSS e JavaScript. E pela primeira vez estou cursando um técnico focado na área de TI, atualmente estou no 2º módulo do curso técnico em desenvolvimento de sistemas na escola técnica Dra. Ruth Cardoso. 
                 </p>
                 <p className="font-RobotoCondensed leading-relaxed text-base my-2">
                     Já desenvolvi vários projetos ao longo desse tempo como, caderno virtual, gtaRP, websites e outros projetos.

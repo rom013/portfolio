@@ -36,11 +36,9 @@ export default function Banner(){
                     <BtnLinkSmall nome={EnvelopeSimple} title={"Email"} link={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=romullomelo0130@gmail.com&body=Ol%C3%A1+R%C3%B4mullo"}/>
                 </div>
 
-                {/* <Btn text="PROJETOS"/> */}
-
                 <button type="button" onClick={()=>{
                     scrollDown.scrollIntoView({behavior: "smooth"})
-                }} className="btn-nav-down animate-bounce hover:animate-none">
+                }} className="btn-nav-down animate-bounce hover:animate-none hidden md:flex">
                     <CaretDown/>
                 </button>
             </div>

@@ -26,6 +26,14 @@ module.exports = {
         "gradient-bg" : "linear-gradient(270deg, #121212 0%, #020A21 52.14%, #020A1F 100%);",
         "gradient-blue-pink" : "linear-gradient(89.99deg, #DB00FF 0.01%, #6100FF 81.57%, rgba(97, 0, 255, 0) 101.04%);",
         "gradient-2" : "linear-gradient(45deg, rgb(185 59 255 / .35), rgb(59 114 255 / .45))"
+      },
+      animation:{
+        "test": "test 10s infinite"
+      },
+      keyframes:{
+        "test": {
+          "0,100%": {display: "flex"}
+        }
       }
     },
   },
