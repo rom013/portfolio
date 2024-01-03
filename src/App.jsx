@@ -1,45 +1,44 @@
-import Rom01 from "./assets/img/photo_rom013.png"
-import BtnDownload from "./components/buttons/buttonDownload"
-import { LinksContainer } from "./components/links"
-import cv from "./assets/docs/RomulloMelo.pdf"
 import BtnNavigation from "./components/buttons/buttonNavigation"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
+import InitialSection from "./components/sections/initial"
+import AboutSection from "./components/sections/about"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
-	const scrollX = useRef()
-	const imageProfile = useRef()
-	const test = useRef()
+	const refsInitialSection = { 
+		btnNavOne: useRef(),
+		imageProfile: useRef()
+	}
+	const refsAboutSection = {
+		imageAbout: useRef(),
+		btnNavTwo: useRef(),
+		contentAbout: useRef()
+	}
 
+	const scrollX = useRef()
+	
 	useEffect(() => {
 
 		gsap.fromTo(
-			imageProfile.current,
+			refsInitialSection.imageProfile.current,
 			{
-				opacity: 1
+				opacity: 1,
+				scale: 1
 			},
 			{
 				scrollTrigger: {
-					trigger: imageProfile.current,
+					trigger: refsInitialSection.imageProfile.current,
 					start: "200px top",
 					end: "2000px top",
-					markers: true,
+					// markers: true,
 					scrub: true,
-					toggleActions: "play pause reverse reset", /*
-						String - Determina como a animação vinculada é controlada nos 4 locais de 
-						alternância distintos - onEnter, onLeave, onEnterBack e onLeaveBack, nessa 
-						ordem. O padrão é reproduzir nenhum, nenhum, nenhum. Portanto, 
-						toggleActions: "play pause resume reset" reproduzirá a animação ao entrar, 
-						pausará ao sair, retomará ao entrar novamente para trás e redefinirá (retrocederá 
-						ao início) ao rolar todo o caminho de volta, além do início. Você pode usar qualquer
-						uma das seguintes palavras-chave para cada ação: 
-						"play", "pause", "resume", "reset", "restart", "complete", "reverse", and "none".
-					*/
+					toggleActions: "play pause reverse reset",
 				},
-				opacity: 0
+				opacity: 0,
+				scale: 0
 			}
 		)
 
@@ -49,7 +48,8 @@ export default function App() {
 				start: "top top",
 				end: "2000 top",
 				scrub: true,
-				pin: true
+				pin: true,
+				toggleActions: "play pause reverse reset",
 			}
 		})
 
@@ -64,10 +64,72 @@ export default function App() {
 					ease: "none"
 				}
 			)
-		return (() => tlX.kill())
+			.fromTo(
+				refsInitialSection.btnNavOne.current,
+				{
+					y: 0,
+				},
+				{
+					scrollTrigger: {
+						trigger: refsInitialSection.imageProfile.current,
+						start: "200 top",
+						end: "900 center",
+						scrub: 2,
+						markers: true
+					},
+					y: 480,
+				}
+			)
+			.fromTo(
+				refsAboutSection.imageAbout.current,
+				{
+					opacity: 0,
+					scale: 0
+				},
+				{
+					scrollTrigger: {
+						trigger: refsAboutSection.imageAbout.current,
+						start: "200px top",
+						end: "1500px top",
+						// markers: true,
+						scrub: true,
+					},
+					opacity: 1,
+					scale: 1
+				}
+			)
+			.fromTo(
+				refsAboutSection.contentAbout.current,
+				{
+					x: 800,
+					rotate: 180
+				},
+				{
+					scrollTrigger: {
+						trigger: refsAboutSection.imageAbout.current,
+						start: "200px top",
+						end: "1500px top",
+						// markers: true,
+						scrub: 2,
+					},
+					x: 0,
+					rotate: 0
+				}
+			)
+			.fromTo(
+				refsAboutSection.btnNavTwo.current,
+				{
+					y: 500
+				},
+				{
+					y: 0
+				}
+			)
+			
+		return (() => {
+			tlX.kill()
+		})
 	}, [])
-
-
 
 	return (
 		<main
@@ -77,70 +139,12 @@ export default function App() {
 				ref={scrollX}
 				className="flex w-[200vw]"
 			>
-				<section
-					className="flex gap-5 h-screen w-screen"
-				>
-					<section
-						className="flex-1 h-full flex items-center gap"
-					>
-
-						<LinksContainer />
-
-						<div
-							className="flex flex-col gap-20 h-full justify-around flex-1 items-center"
-						>
-							<div>
-								<p
-									className="font-Sora text-[2rem] text-zinc-950 translate-y-3"
-								>
-									Eu sou
-								</p>
-								<h1
-									className="font-Sora font-bold text-[4rem] text-zinc-950"
-								>
-									Rômullo Melo
-								</h1>
-								<p
-									className="text-zinc-500 font-Lato text-2xl -translate-y-3"
-								>
-									Desenvolvedor front-end & design UI
-								</p>
-							</div>
-
-							<div
-								className="flex gap-10"
-							>
-								<BtnNavigation
-									title={"Conhecer meus trabalhos"}
-									position={2000}
-								/>
-								<BtnDownload
-									file={cv}
-									title={"Baixar CV"}
-								/>
-							</div>
-
-						</div>
-
-					</section>
-					<div
-						className="max-w-2xl w-1/2 h-full"
-					>
-						<img
-							className="w-full h-full object-cover"
-							src={Rom01}
-							alt="Rômullo Melo"
-							draggable={false}
-							ref={imageProfile}
-						/>
-					</div>
-				</section>
-				<section
-					className="flex gap-5 h-screen bg-violet-600 w-screen"
-					ref={test}
-				>
-					
-				</section>
+				<InitialSection
+					refs={refsInitialSection}
+				/>
+				<AboutSection
+					refs={refsAboutSection}
+				/>
 			</div>
 		</main>
 	)
