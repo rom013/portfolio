@@ -1,6 +1,6 @@
 import BtnNavigation from "../buttons/buttonNavigation";
 
-export default function AboutSection({refs}) {
+export default function AboutSection({ refs }) {
     return (
         <section
             className="flex gap-5 h-screen w-screen"
@@ -29,17 +29,28 @@ export default function AboutSection({refs}) {
                     >
                         Um pouco sobre eu
                     </h2>
-                    <p
-                        className="font-lato text-zinc-600 leading-relaxed"
+                    <div
+                        className="flex flex-col gap-2"
                     >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, commodi quae sequi voluptatum sint tempora ut sed, odit nihil distinctio veniam quis similique animi deserunt eum. Quam repudiandae maiores dolores.
-                    </p>
+                        <p
+                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                        >
+                            Meu nome é Rômullo Melo Oliveira, tenho 20 anos e sou um programador especializado em front-end. Graduei-me em Desenvolvimento de Sistemas na ETEC Drª Ruth Cardoso, São Vicente, SP, e venho construindo minha carreira nessa área há dois anos.
+
+                        </p>
+                        <p
+                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                        >
+                            Participei ativamente do desenvolvimento do projeto PAWSY, uma experiência enriquecedora que contribuiu para meu crescimento profissional. Não tenho medo de errar, encaro cada desafio como uma oportunidade de aprendizado. Estou sempre disposto a aprender e também a compartilhar meu conhecimento.
+                        </p>
+                    </div>
                 </div>
 
                 <div
-                    className="flex justify-center w-full"
+                    className="flex flex-col items-center"
                     ref={refs.btnNavTwo}
                 >
+                    <p className="pointer-events-none">Continuar</p>
                     <BtnNavigation
                         type="arrow"
                         position={3000}

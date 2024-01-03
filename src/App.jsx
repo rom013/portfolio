@@ -75,7 +75,7 @@ export default function App() {
 						start: "200 top",
 						end: "900 center",
 						scrub: 2,
-						markers: true
+						// markers: true
 					},
 					y: 480,
 				}
