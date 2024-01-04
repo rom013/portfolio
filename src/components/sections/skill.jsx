@@ -1,10 +1,12 @@
 import mySkills from "../../assets/db/mySkills"
+import FooterImage from "../footerImage.jsx"
+
 
 export default function SkillSection({ refs }) {
     return (
         <section
             ref={refs.skillSection}
-            className="flex items-center h-screen w-screen bg-white"
+            className="flex items-center h-screen w-screen bg-white relative"
         >
             <div
                 className="max-w-screen-lg mx-auto w-full flex flex-col gap-8"
@@ -20,7 +22,7 @@ export default function SkillSection({ refs }) {
                 >
                     {
                         mySkills.map(skill => {
-                            return(
+                            return (
                                 <div
                                     title={skill.name}
                                     className="px-4 py-2 rounded-lg border border-black grayscale flex items-center gap-2"
@@ -37,6 +39,12 @@ export default function SkillSection({ refs }) {
                     }
                 </div>
 
+            </div>
+
+            <div
+                className="absolute bottom-0 w-full"
+            >
+                <FooterImage />
             </div>
         </section>
     )
