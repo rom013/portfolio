@@ -8,7 +8,7 @@ import AboutSection from "./components/sections/about"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
-	const refsInitialSection = { 
+	const refsInitialSection = {
 		btnNavOne: useRef(),
 		imageProfile: useRef()
 	}
@@ -19,7 +19,9 @@ export default function App() {
 	}
 
 	const scrollX = useRef()
-	
+	const skillSection = useRef()
+	const scrollYII = useRef()
+
 	useEffect(() => {
 
 		gsap.fromTo(
@@ -46,9 +48,10 @@ export default function App() {
 			scrollTrigger: {
 				trigger: "#main",
 				start: "top top",
-				end: "2000 top",
+				end: "4800 top",
 				scrub: true,
 				pin: true,
+				markers: true,
 				toggleActions: "play pause reverse reset",
 			}
 		})
@@ -125,7 +128,22 @@ export default function App() {
 					y: 0
 				}
 			)
+			.to(
+				skillSection.current,
+				{
+					yPercent: -100,
+					ease: "none"
+				}
+			)
+			.to(
+				scrollYII.current,
+				{
+					yPercent: -200,
+					ease: "none",
+				}
+			)
 			
+
 		return (() => {
 			tlX.kill()
 		})
@@ -134,6 +152,7 @@ export default function App() {
 	return (
 		<main
 			id="main"
+			className="!h-[100vh] overflow-hidden"
 		>
 			<div
 				ref={scrollX}
@@ -146,6 +165,21 @@ export default function App() {
 					refs={refsAboutSection}
 				/>
 			</div>
+
+
+			<section
+				ref={skillSection}
+				className="flex gap-5 h-screen w-screen bg-white"
+			>
+				slide 03
+			</section>
+			<section
+				ref={scrollYII}
+				className="bg-red-400 h-screen flex justify-center items-center w-screen"
+			>
+				slide 04
+			</section>
+
 		</main>
 	)
 }
