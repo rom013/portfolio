@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
 import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
+import SkillSection from "./components/sections/skill"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -19,7 +20,9 @@ export default function App() {
 	}
 
 	const scrollX = useRef()
-	const skillSection = useRef()
+	const refsSkillSection = {
+		skillSection: useRef()
+	}
 	const scrollYII = useRef()
 
 	useEffect(() => {
@@ -129,7 +132,7 @@ export default function App() {
 				}
 			)
 			.to(
-				skillSection.current,
+				refsSkillSection.skillSection.current,
 				{
 					yPercent: -100,
 					ease: "none"
@@ -166,13 +169,10 @@ export default function App() {
 				/>
 			</div>
 
-
-			<section
-				ref={skillSection}
-				className="flex gap-5 h-screen w-screen bg-white"
-			>
-				slide 03
-			</section>
+			<SkillSection
+				refs={refsSkillSection}
+			/>
+			
 			<section
 				ref={scrollYII}
 				className="bg-red-400 h-screen flex justify-center items-center w-screen"

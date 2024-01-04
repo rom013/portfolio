@@ -50,10 +50,10 @@ export default function AboutSection({ refs }) {
                     className="flex flex-col items-center"
                     ref={refs.btnNavTwo}
                 >
-                    <p className="pointer-events-none">Continuar</p>
+                    <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
-                        position={3000}
+                        position={3600}
                         className={"!p-0 border-none rotate-90"}
                     />
                 </div>
