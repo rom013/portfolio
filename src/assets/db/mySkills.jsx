@@ -40,6 +40,14 @@ const mySkills = [
         icon: <i className="devicon-mongodb-plain colored text-[2rem]"/>
     },
     {
+        name: "SQLite",
+        icon: <i class="devicon-sqlite-plain colored text-[2rem]"/>
+    },
+    {
+        name: "PHP",
+        icon: <i class="devicon-php-plain colored text-[2rem]"/>
+    },
+    {
         name: "React",
         icon: <i className="devicon-react-original colored text-[2rem]"/>
     },
@@ -54,6 +62,10 @@ const mySkills = [
     {
         name: "Prisma Client",
         icon: <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/01/prisma_logo-freelogovectors.net_.png" width={24} draggable={false} alt="Logo" />
+    },
+    {
+        name: "Supabase",
+        icon: <img src="https://supabase.com/_next/image?url=%2Fimages%2Fcompany%2Fcommunity%2Fsupabase.png&w=3840&q=75" width={24} draggable={false} alt="Logo" />
     },
     {
         name: "Expo",

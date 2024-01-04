@@ -54,7 +54,7 @@ export default function App() {
 				end: "4800 top",
 				scrub: true,
 				pin: true,
-				markers: true,
+				// markers: true,
 				toggleActions: "play pause reverse reset",
 			}
 		})
