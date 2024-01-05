@@ -1,3 +1,6 @@
+import myCertificates from "../../assets/db/myCertificates";
+import CardCertificate from "../box/cardCertificate";
+
 export default function CertificationSection({ refs }) {
     return (
         <section
@@ -21,9 +24,18 @@ export default function CertificationSection({ refs }) {
                 </div>
 
                 <div
-                    className="w-full h-[600px] bg-zinc-400 grid grid-cols-2 gap-6"
+                    className="w-full h-[600px] overflow-y-auto grid grid-cols-2 gap-6"
                 >
-                    
+                    {
+                        myCertificates.map(certficate => <CardCertificate
+                                title={certficate.title}
+                                description={certficate.description}
+                                time={certficate.time}
+                                linkConfirm={certficate.linkConfirm}
+                                nameLink={certficate.nameLink}
+                            />
+                        )
+                    }
                 </div>
             </main>
         </section>
