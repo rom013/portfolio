@@ -21,11 +21,11 @@ export default function SkillSection({ refs }) {
         });
       
         mySkills.forEach((_, i) => { // "_" é uma maneira de informar aos leitores do código que o valor não é relevante para a lógica da função
-          const selector = `.test-${i}`;
+          const selector = `.skill-${i}`;
           tl.fromTo(
             selector,
-            { duration: 1, y: 500 },
-            { duration: 1, y: 0 }
+            { duration: 1, y: 200, opacity: 0 },
+            { duration: 1, y: 0, opacity: 1 }
           );
         });
       
@@ -56,7 +56,7 @@ export default function SkillSection({ refs }) {
                             <div
                                 key={skill.name}
                                 title={skill.name}
-                                className={`px-4 py-2 rounded-lg border border-black grayscale flex items-center gap-2 test-${i}`}
+                                className={`px-4 py-2 rounded-lg border border-black grayscale flex items-center gap-2 skill-${i}`}
                             >
                                 {skill.icon}
                                 {skill.name}
