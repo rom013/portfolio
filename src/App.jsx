@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
+import CertificationSection from "./components/sections/certifications"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -23,7 +24,10 @@ export default function App() {
 	const refsSkillSection = {
 		skillSection: useRef()
 	}
-	const scrollYII = useRef()
+
+	const refsCertificacionSection = {
+		scroll: useRef()
+	}
 
 	useEffect(() => {
 
@@ -139,7 +143,7 @@ export default function App() {
 				}
 			)
 			.to(
-				scrollYII.current,
+				refsCertificacionSection.scroll.current,
 				{
 					yPercent: -200,
 					ease: "none",
@@ -173,12 +177,9 @@ export default function App() {
 				refs={refsSkillSection}
 			/>
 			
-			<section
-				ref={scrollYII}
-				className="bg-red-400 h-screen flex justify-center items-center w-screen"
-			>
-				slide 04
-			</section>
+			<CertificationSection
+				refs={refsCertificacionSection}
+			/>
 
 		</main>
 	)
