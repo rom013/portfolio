@@ -41,11 +41,11 @@ const mySkills = [
     },
     {
         name: "SQLite",
-        icon: <i class="devicon-sqlite-plain colored text-[2rem]"/>
+        icon: <i className="devicon-sqlite-plain colored text-[2rem]"/>
     },
     {
         name: "PHP",
-        icon: <i class="devicon-php-plain colored text-[2rem]"/>
+        icon: <i className="devicon-php-plain colored text-[2rem]"/>
     },
     {
         name: "React",

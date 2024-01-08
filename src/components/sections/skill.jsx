@@ -14,7 +14,7 @@ export default function SkillSection({ refs }) {
             trigger: "#sectionSkill",
             start: "2800 center",
             toggleActions: "play pause reverse reset",
-            markers: true,
+            // markers: true,
             scrub: 5,
             pin: true
           }

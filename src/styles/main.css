@@ -2,10 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply dark:bg-[#141414]
+body {
+  @apply dark:bg-[#141414];
 }
 
-.btn-style{
-    @apply py-4 px-8 rounded border border-black text-lg font-Lato
+.btn-style {
+  @apply py-4 px-8 rounded border border-black text-lg font-Lato;
+}
+
+@keyframes scale-up-br {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
 }

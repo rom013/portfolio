@@ -20,16 +20,21 @@ export default function App() {
 		btnNavTwo: useRef(),
 		contentAbout: useRef()
 	}
-
-	const scrollX = useRef()
 	const refsSkillSection = {
 		skillSection: useRef()
 	}
-	const projectsSection = useRef()
-
 	const refsCertificacionSection = {
 		scroll: useRef()
 	}
+	
+	const refsWorksSection = {
+		projectsSection: useRef(),
+		slideWorks: useRef(),
+		title: useRef()
+	}
+
+	const scrollX = useRef()
+
 
 	useEffect(() => {
 
@@ -152,10 +157,41 @@ export default function App() {
 				}
 			)
 			.to(
-				projectsSection.current,
+				refsWorksSection.projectsSection.current,
 				{
 					yPercent: -300,
 					ease: "none",
+				}
+			)
+			.fromTo(
+				refsWorksSection.slideWorks.current,
+				{
+					xPercent: 0
+				},
+				{
+					scrollTrigger: {
+						trigger: refsWorksSection.projectsSection.current,
+						start: "5200 top",
+						end: "6000 center",
+						// markers: true,
+						scrub: 2,
+					},
+					xPercent: -50
+				}
+			)
+			.fromTo(
+				refsWorksSection.title.current,
+				{
+					xPercent: -100
+				},
+				{
+					scrollTrigger: {
+						trigger: refsWorksSection.projectsSection.current,
+						start: "5200 top",
+						markers: true,
+						scrub: 2,
+					},
+					xPercent: 0
 				}
 			)
 
@@ -192,19 +228,25 @@ export default function App() {
 
 			<section
 				className="w-screen h-screen bg-zinc-50 flex items-center"
-				ref={projectsSection}
+				ref={refsWorksSection.projectsSection}
 			>
 				<main
 					className="flex flex-col items-center gap-6"
 				>
-					<h2
-						className="font-sora text-[6rem] font-bold text-zinc-800 uppercase"
+					<div
+						className="w-full max-w-5xl border-x-2 overflow-hidden"
 					>
-						Projetos
-					</h2>
+						<h2
+							ref={refsWorksSection.title}
+							className="font-sora text-[6rem] font-bold text-zinc-800 uppercase text-center"
+						>
+							Projetos
+						</h2>
+					</div>
 
 					<div
 						className="flex gap-8 justify-center w-screen"
+						ref={refsWorksSection.slideWorks}
 					>
 						<CardProjects/>
 						<CardProjects/>
