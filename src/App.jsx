@@ -6,6 +6,7 @@ import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
 import CertificationSection from "./components/sections/certifications"
+import CardProjects from "./components/box/cardProjects"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,6 +25,7 @@ export default function App() {
 	const refsSkillSection = {
 		skillSection: useRef()
 	}
+	const projectsSection = useRef()
 
 	const refsCertificacionSection = {
 		scroll: useRef()
@@ -55,7 +57,7 @@ export default function App() {
 			scrollTrigger: {
 				trigger: "#main",
 				start: "top top",
-				end: "4800 top",
+				end: "7800 top",
 				scrub: true,
 				pin: true,
 				// markers: true,
@@ -149,7 +151,14 @@ export default function App() {
 					ease: "none",
 				}
 			)
-			
+			.to(
+				projectsSection.current,
+				{
+					yPercent: -300,
+					ease: "none",
+				}
+			)
+
 
 		return (() => {
 			tlX.kill()
@@ -176,10 +185,44 @@ export default function App() {
 			<SkillSection
 				refs={refsSkillSection}
 			/>
-			
+
 			<CertificationSection
 				refs={refsCertificacionSection}
 			/>
+
+			<section
+				className="w-screen h-screen bg-zinc-50 flex items-center"
+				ref={projectsSection}
+			>
+				<main
+					className="flex flex-col items-center gap-6"
+				>
+					<h2
+						className="font-sora text-[6rem] font-bold text-zinc-800 uppercase"
+					>
+						Projetos
+					</h2>
+
+					<div
+						className="flex gap-8 justify-center w-screen"
+					>
+						<CardProjects/>
+						<CardProjects/>
+						<CardProjects/>
+						<CardProjects/>
+						<CardProjects/>
+						<CardProjects/>
+					</div>
+
+					<button
+						onMouseEnter={e=>console.log(e)}
+						className="px-8 py-5 rounded-lg border-2 border-zinc-600 text-lg font-Lato w-fit hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300"
+					>
+						Mais trabalhos
+					</button>
+
+				</main>
+			</section>
 
 		</main>
 	)

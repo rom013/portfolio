@@ -36,7 +36,11 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
 
                 {
                     linkConfirm &&
-                    <a target="_blank" href={linkConfirm} className="flex gap-2 items-center w-fit hover:underline">
+                    <a 
+                        target="_blank" 
+                        href={linkConfirm} 
+                        className="flex gap-2 items-center w-fit hover:underline"
+                    >
                         {nameLink} <ArrowSquareOut />
                     </a>
                 }
