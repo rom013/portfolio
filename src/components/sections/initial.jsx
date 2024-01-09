@@ -42,7 +42,7 @@ export default function InitialSection({refs}) {
                         className={"absolute right-0"}
                     >
                         <BtnNavigation
-                            position={2000}
+                            position={1000}
                             type="arrow"
                             className={"!p-0 border-none"}
                         />
@@ -53,7 +53,7 @@ export default function InitialSection({refs}) {
                     >
                         <BtnNavigation
                             title={"Conhecer meus trabalhos"}
-                            position={2000}
+                            position={5000}
                         />
                         <BtnDownload
                             file={cv}

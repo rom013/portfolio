@@ -53,7 +53,7 @@ export default function AboutSection({ refs }) {
                     <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
-                        position={3600}
+                        position={2000}
                         className={"!p-0 border-none rotate-90"}
                     />
                 </div>

@@ -6,6 +6,7 @@ import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
 import CertificationSection from "./components/sections/certifications"
 import WorksSection from "./components/sections/works"
+import ContactSection from "./components/sections/contact"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -32,9 +33,11 @@ export default function App() {
 		title: useRef()
 	}
 
-	const scrollX = useRef()
-	const contactSection = useRef()
+	const refsContactSection = {
+		contactSection: useRef()
+	}
 
+	const scrollX = useRef()
 
 	useEffect(() => {
 
@@ -62,8 +65,8 @@ export default function App() {
 			scrollTrigger: {
 				trigger: "#main",
 				start: "top top",
-				end: "7000 top",
-				scrub: true,
+				end: "6000 top",
+				scrub: .7,
 				pin: true,
 				// markers: true,
 				toggleActions: "play pause reverse reset",
@@ -106,8 +109,8 @@ export default function App() {
 				{
 					scrollTrigger: {
 						trigger: refsAboutSection.imageAbout.current,
-						start: "200px top",
-						end: "1500px top",
+						start: "top top",
+						end: "1000px center",
 						// markers: true,
 						scrub: true,
 					},
@@ -124,8 +127,8 @@ export default function App() {
 				{
 					scrollTrigger: {
 						trigger: refsAboutSection.imageAbout.current,
-						start: "200px top",
-						end: "1500px top",
+						start: "top top",
+						end: "1000px 800",
 						// markers: true,
 						scrub: 2,
 					},
@@ -171,9 +174,9 @@ export default function App() {
 				{
 					scrollTrigger: {
 						trigger: refsWorksSection.projectsSection.current,
-						start: "3000 top",
-						end: "4000 center",
-						// markers: true,
+						start: "1000 top",
+						end: "2000 center",
+						markers: true,
 						scrub: 2,
 					},
 					xPercent: 0
@@ -187,18 +190,19 @@ export default function App() {
 				{
 					scrollTrigger: {
 						trigger: refsWorksSection.projectsSection.current,
-						start: "3400 top",
-						markers: true,
+						start: "900 top",
+						// markers: true,
 						scrub: 2,
 					},
 					xPercent: 0
 				}
 			)
 			.to(
-				contactSection.current,
+				refsContactSection.contactSection.current,
 				{
 					yPercent: -400,
 					ease: "none",
+					duration: 2
 				}
 			)
 		return (() => {
@@ -235,9 +239,8 @@ export default function App() {
 				refs={refsWorksSection}
 			/>
 
-			<section
-				className="w-screen h-screen bg-zinc-800 flex items-center"
-				ref={contactSection}
+			<ContactSection
+				refs={refsContactSection}
 			/>
 
 		</main>

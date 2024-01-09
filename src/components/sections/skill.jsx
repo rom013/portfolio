@@ -12,10 +12,10 @@ export default function SkillSection({ refs }) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#sectionSkill",
-            start: "2800 center",
+            start: "1800 bottom",
             toggleActions: "play pause reverse reset",
             // markers: true,
-            scrub: 5,
+            scrub: 1,
             pin: true
           }
         });
