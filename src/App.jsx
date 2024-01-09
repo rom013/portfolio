@@ -1,4 +1,3 @@
-import BtnNavigation from "./components/buttons/buttonNavigation"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
@@ -6,7 +5,7 @@ import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
 import CertificationSection from "./components/sections/certifications"
-import CardProjects from "./components/box/cardProjects"
+import WorksSection from "./components/sections/works"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -26,7 +25,7 @@ export default function App() {
 	const refsCertificacionSection = {
 		scroll: useRef()
 	}
-	
+
 	const refsWorksSection = {
 		projectsSection: useRef(),
 		slideWorks: useRef(),
@@ -34,6 +33,7 @@ export default function App() {
 	}
 
 	const scrollX = useRef()
+	const contactSection = useRef()
 
 
 	useEffect(() => {
@@ -62,7 +62,7 @@ export default function App() {
 			scrollTrigger: {
 				trigger: "#main",
 				start: "top top",
-				end: "7800 top",
+				end: "7000 top",
 				scrub: true,
 				pin: true,
 				// markers: true,
@@ -166,17 +166,17 @@ export default function App() {
 			.fromTo(
 				refsWorksSection.slideWorks.current,
 				{
-					xPercent: 0
+					xPercent: 100
 				},
 				{
 					scrollTrigger: {
 						trigger: refsWorksSection.projectsSection.current,
-						start: "5200 top",
-						end: "6000 center",
+						start: "3000 top",
+						end: "4000 center",
 						// markers: true,
 						scrub: 2,
 					},
-					xPercent: -50
+					xPercent: 0
 				}
 			)
 			.fromTo(
@@ -187,15 +187,20 @@ export default function App() {
 				{
 					scrollTrigger: {
 						trigger: refsWorksSection.projectsSection.current,
-						start: "5200 top",
+						start: "3400 top",
 						markers: true,
 						scrub: 2,
 					},
 					xPercent: 0
 				}
 			)
-
-
+			.to(
+				contactSection.current,
+				{
+					yPercent: -400,
+					ease: "none",
+				}
+			)
 		return (() => {
 			tlX.kill()
 		})
@@ -226,45 +231,14 @@ export default function App() {
 				refs={refsCertificacionSection}
 			/>
 
+			<WorksSection
+				refs={refsWorksSection}
+			/>
+
 			<section
-				className="w-screen h-screen bg-zinc-50 flex items-center"
-				ref={refsWorksSection.projectsSection}
-			>
-				<main
-					className="flex flex-col items-center gap-6"
-				>
-					<div
-						className="w-full max-w-5xl border-x-2 overflow-hidden"
-					>
-						<h2
-							ref={refsWorksSection.title}
-							className="font-sora text-[6rem] font-bold text-zinc-800 uppercase text-center"
-						>
-							Projetos
-						</h2>
-					</div>
-
-					<div
-						className="flex gap-8 justify-center w-screen"
-						ref={refsWorksSection.slideWorks}
-					>
-						<CardProjects/>
-						<CardProjects/>
-						<CardProjects/>
-						<CardProjects/>
-						<CardProjects/>
-						<CardProjects/>
-					</div>
-
-					<button
-						onMouseEnter={e=>console.log(e)}
-						className="px-8 py-5 rounded-lg border-2 border-zinc-600 text-lg font-Lato w-fit hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300"
-					>
-						Mais trabalhos
-					</button>
-
-				</main>
-			</section>
+				className="w-screen h-screen bg-zinc-800 flex items-center"
+				ref={contactSection}
+			/>
 
 		</main>
 	)

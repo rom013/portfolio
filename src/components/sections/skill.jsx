@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import mySkills from "../../assets/db/mySkills"
+import mySkills from "../../db/mySkills.jsx"
 import FooterImage from "../footerImage.jsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"

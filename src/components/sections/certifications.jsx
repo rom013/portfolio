@@ -1,4 +1,4 @@
-import myCertificates from "../../assets/db/myCertificates";
+import myCertificates from "../../db/myCertificates";
 import CardCertificate from "../box/cardCertificate";
 
 export default function CertificationSection({ refs }) {

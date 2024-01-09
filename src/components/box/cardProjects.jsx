@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { createPortal } from "react-dom"
 
-const CardProjects = () => {
+const CardProjects = ({ image, name, time, description, auth }) => {
     const [showWork, setShowWork] = useState(false)
 
     showWork ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
@@ -14,8 +14,8 @@ const CardProjects = () => {
                 title=""
             >
                 <img
-                    src="https://placehold.co/600x400"
-                    alt=""
+                    src={image}
+                    alt={name}
                     draggable={false}
                     className="max-w-96 max-h-60"
                 />
@@ -33,8 +33,8 @@ const CardProjects = () => {
                                 className="w-full"
                             >
                                 <img
-                                    src="https://placehold.co/1000x450"
-                                    alt=""
+                                    src={image}
+                                    alt={name}
                                     draggable={false}
                                     className="w-full object-cover"
                                 />
@@ -49,26 +49,26 @@ const CardProjects = () => {
                                     <strong
                                         className="font-Lato font-bold text-2xl text-zinc-900"
                                     >
-                                        SpotDev
+                                        {name}
                                     </strong>
                                     <span
                                         className="text-zinc-500"
                                     >
-                                        2023
+                                        {time}
                                     </span>
                                 </div>
 
                                 <div
                                     className="flex gap-1"
                                 >
-                                    <span>@rom013</span>
+                                    <span>@{auth}</span>
                                 </div>
                             </div>
 
                             <p
                                 className="text-zinc-800 leading-relaxed"
                             >
-                                A plataforma SpotDev é um chat de conversas entre devs online que permite aos profissionais da área de ti se comunicarem, trocarem experiências e compartilharem conhecimentos. A plataforma oferece a possibilidade de criar fóruns de conversas específicas e comunidades sobre temas relacionados à tecnologia, programação, desenvolvimento e inovação. A plataforma tem como objetivo conectar os devs, facilitar o aprendizado e estimular a colaboração entre eles.F
+                                {description}
                             </p>
 
                             <div
