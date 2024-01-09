@@ -38,7 +38,7 @@ const WorksSection = ({ refs }) => {
 
                 <button
                     onMouseEnter={e => console.log(e)}
-                    className="px-8 py-5 rounded-lg border-2 border-zinc-600 text-lg font-Lato w-fit hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300"
+                    className="btn-style"
                 >
                     Mais trabalhos
                 </button>

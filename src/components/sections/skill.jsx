@@ -3,6 +3,7 @@ import mySkills from "../../db/mySkills.jsx"
 import FooterImage from "../footerImage.jsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import BtnNavigation from "../buttons/buttonNavigation.jsx"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -64,7 +65,17 @@ export default function SkillSection({ refs }) {
                         ))
                     }
                 </div>
-
+                <div
+                    className="flex flex-col items-center"
+                    // ref={refs.btnNavTwo}
+                >
+                    <p className="pointer-events-none text-sm">Continuar</p>
+                    <BtnNavigation
+                        type="arrow"
+                        position={3000}
+                        className={"!p-0 border-none rotate-90"}
+                    />
+                </div>
             </div>
 
             <div

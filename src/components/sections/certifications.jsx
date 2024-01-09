@@ -1,5 +1,6 @@
 import myCertificates from "../../db/myCertificates";
 import CardCertificate from "../box/cardCertificate";
+import BtnNavigation from "../buttons/buttonNavigation";
 
 export default function CertificationSection({ refs }) {
     return (
@@ -36,6 +37,17 @@ export default function CertificationSection({ refs }) {
                             />
                         )
                     }
+                </div>
+
+                <div
+                    className="flex flex-col items-center"
+                >
+                    <p className="pointer-events-none text-sm">Continuar</p>
+                    <BtnNavigation
+                        type="arrow"
+                        position={4000}
+                        className={"!p-0 border-none rotate-90"}
+                    />
                 </div>
             </main>
         </section>

@@ -35,14 +35,20 @@ export default function AboutSection({ refs }) {
                         <p
                             className="font-lato text-zinc-700 leading-relaxed text-base"
                         >
-                            Meu nome é Rômullo Melo Oliveira, tenho 20 anos e sou um programador especializado em front-end. Graduei-me em Desenvolvimento de Sistemas na ETEC Drª Ruth Cardoso, São Vicente, SP, e venho construindo minha carreira nessa área há dois anos.
+                            Meu nome é Rômullo Melo Oliveira, sou um programador especializado em front-end, com uma trajetória marcada por grandes projetos. Obtive minha formação em Desenvolvimento de Sistemas na ETEC Drª Ruth Cardoso, São Vicente, SP, e venho construindo minha carreira nessa área há dois anos.
 
                         </p>
                         <p
                             className="font-lato text-zinc-700 leading-relaxed text-base"
                         >
-                            Participei ativamente do desenvolvimento do projeto PAWSY, uma experiência enriquecedora que contribuiu para meu crescimento profissional. Não tenho medo de errar, encaro cada desafio como uma oportunidade de aprendizado. Estou sempre disposto a aprender e também a compartilhar meu conhecimento.
+                            Encaro cada desafio como uma oportunidade de aprendizado, sem medo de errar, e busco sempre superar as expectativas. Estou pronto para contribuir com minha expertise em projetos desafiadores.
                         </p>
+                        <p
+                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                        >
+                            Vamos juntos alcançar resultados excepcionais!
+                        </p>
+
                     </div>
                 </div>
 

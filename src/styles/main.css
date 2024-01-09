@@ -4,6 +4,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden
+}
+
+ ::-webkit-scrollbar {
+  @apply w-1
 }
 
 body {
@@ -11,7 +16,7 @@ body {
 }
 
 .btn-style {
-  @apply py-4 px-8 rounded border border-black text-lg font-Lato;
+  @apply py-4 px-8 rounded border border-black text-lg font-Lato hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300
 }
 
 @keyframes scale-up-br {

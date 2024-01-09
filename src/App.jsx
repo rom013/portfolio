@@ -176,7 +176,7 @@ export default function App() {
 						trigger: refsWorksSection.projectsSection.current,
 						start: "1000 top",
 						end: "2000 center",
-						markers: true,
+						// markers: true,
 						scrub: 2,
 					},
 					xPercent: 0
