@@ -60,7 +60,7 @@ export default function AboutSection({ refs }) {
                     <BtnNavigation
                         type="arrow"
                         position={2000}
-                        className={"!p-0 border-none rotate-90"}
+                        className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
             </div>

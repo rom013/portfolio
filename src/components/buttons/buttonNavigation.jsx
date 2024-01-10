@@ -14,6 +14,7 @@ export default function BtnNavigation({ title, position, type="default", classNa
     return(
         <button
             className={twMerge("btn-style", className)}
+            title="Navegar para a próxima seção"
             onClick={()=>{
                 window.scroll(
                     {

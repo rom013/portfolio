@@ -1,5 +1,6 @@
 import myWorks from "../../db/myWorks"
 import CardProjects from "../box/cardProjects"
+import BtnNavigation from "../buttons/buttonNavigation"
 
 const WorksSection = ({ refs }) => {
     return (
@@ -26,7 +27,7 @@ const WorksSection = ({ refs }) => {
                     ref={refs.slideWorks}
                 >
                     {
-                        myWorks.map(works => <CardProjects 
+                        myWorks.map(works => <CardProjects
                             auth={works.auth}
                             description={works.description}
                             image={works.image}
@@ -42,6 +43,12 @@ const WorksSection = ({ refs }) => {
                 >
                     Mais trabalhos
                 </button>
+
+                <BtnNavigation
+                    type="arrow"
+                    position={6000}
+                    className={"!p-0 border-none rotate-90 !rounded-full"}
+                />
 
             </main>
         </section>

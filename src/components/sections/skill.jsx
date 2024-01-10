@@ -66,14 +66,12 @@ export default function SkillSection({ refs }) {
                     }
                 </div>
                 <div
-                    className="flex flex-col items-center"
-                    // ref={refs.btnNavTwo}
+                    className="flex justify-center"
                 >
-                    <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
                         position={3000}
-                        className={"!p-0 border-none rotate-90"}
+                        className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
             </div>

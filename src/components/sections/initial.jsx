@@ -46,7 +46,7 @@ export default function InitialSection({refs}) {
                         <BtnNavigation
                             position={1000}
                             type="arrow"
-                            className={"!p-0 border-none"}
+                            className={"!p-0 border-none !rounded-full"}
                         />
                     </div>
 

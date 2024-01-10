@@ -40,13 +40,12 @@ export default function CertificationSection({ refs }) {
                 </div>
 
                 <div
-                    className="flex flex-col items-center"
+                    className="flex justify-center"
                 >
-                    <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
                         position={4000}
-                        className={"!p-0 border-none rotate-90"}
+                        className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
             </main>
