@@ -7,9 +7,9 @@ html {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   @apply w-1;
-}
+} */
 
 body {
   @apply dark:bg-[#141414];

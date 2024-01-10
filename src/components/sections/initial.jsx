@@ -14,7 +14,9 @@ export default function InitialSection({refs}) {
                 className="flex-1 h-full flex items-center gap"
             >
 
-                <LinksContainer />
+                <LinksContainer 
+                    className={"ml-10"}
+                />
 
                 <div
                     className="flex flex-col gap-20 h-full relative justify-around flex-1 items-center"

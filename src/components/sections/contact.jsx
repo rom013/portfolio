@@ -1,11 +1,13 @@
 import myContact from "../../db/myContact"
 import BtnDownload from "../buttons/buttonDownload"
 import CV from "../../assets/docs/RomulloMelo.pdf"
+import { LinksContainer } from "../links"
 
 const ContactSection = ({ refs }) => {
     return (
         <section
             className="w-screen h-screen bg-zinc-800 flex"
+            ref={refs.contactSection}
         >
             <div
                 className="max-w-2xl w-full h-full"
@@ -27,27 +29,13 @@ const ContactSection = ({ refs }) => {
                 </h2>
 
                 <ul
-                    className="flex flex-col gap-8"
+                    className="flex flex-col gap-8 text-white"
                 >
-                    {
-                        myContact.map(contact => {
-                            return(
-                                <li
-                                    className="text-white"
-                                >
-                                    <a 
-                                        className="flex gap-6 items-center text-lg w-fit"
-                                        href={contact.link}
-                                        target="_blank"
-                                        title={contact.name}
-                                    >
-                                        { contact.icon }
-                                        <p> { contact.title } </p>
-                                    </a>
-                                </li>
-                            )
-                        })
-                    }
+                    <LinksContainer 
+                        showName="true" 
+                        classNameItem={""} 
+
+                    />
                 </ul>
 
                 <BtnDownload

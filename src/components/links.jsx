@@ -1,43 +1,30 @@
 import { GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react"
+import myContact from "../db/myContact"
+import { twMerge } from "tailwind-merge"
 
-const network = [
-    {
-        name: "/rom013",
-        link: "https://github.com/rom013",
-        icon: <GithubLogo size={24} color="#000" />
-    },
-    {
-        name: "/in/romullomelo",
-        link: "https://linkedin.com/in/romullomelo",
-        icon: <LinkedinLogo size={24} color="#000" />
-    },
-    {
-        name: "@romu_013",
-        link: "https://instagram.com/romu_013",
-        icon: <InstagramLogo size={24} color="#000" />
-    },
-]
-
-export function LinksContainer({ showName = false }){
+export function LinksContainer({ showName = false, className, classNameItem }){
     return(
-        <div
-            className="flex flex-col gap-10 ml-10"
+        <ul
+            className={twMerge("flex flex-col gap-10", className)}
         >
             {
-                network.map((e, i) => {
-                    return <a 
-                        href={e.link}
-                        target="_blank"
-                        className="flex gap-6"
-                        key={i}
-                    >
-                        { e.icon }
-                        { 
-                            showName && e.name
-                        }
-                    </a>
+                myContact.map((contact, i) => {
+                    return <li className={twMerge("flex",classNameItem)}>
+                        <a 
+                            href={contact.link}
+                            target="_blank"
+                            title={contact.name}
+                            className="flex gap-6"
+                            key={i}
+                        >
+                            { contact.icon }
+                            { 
+                                showName && contact.title
+                            }
+                        </a>
+                    </li> 
                 })
             }
-        </div>
+        </ul>
     )
 }
