@@ -25,7 +25,7 @@ export default function CertificationSection({ refs }) {
                 </div>
 
                 <div
-                    className="w-full h-[600px] overflow-y-auto grid grid-cols-2 gap-6"
+                    className="w-full max-h-[600px] overflow-y-auto grid grid-cols-2 gap-6"
                 >
                     {
                         myCertificates.map(certficate => <CardCertificate

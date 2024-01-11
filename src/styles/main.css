@@ -16,7 +16,7 @@ body {
 }
 
 .btn-style {
-  @apply flex justify-center py-4 px-8 rounded border border-black text-lg font-Lato hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300;
+  @apply flex justify-center items-center text-center py-4 px-8 rounded border border-black text-lg font-Lato hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300;
 }
 
 @keyframes scale-up-br {

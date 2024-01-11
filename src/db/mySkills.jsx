@@ -32,10 +32,6 @@ const mySkills = [
         icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Logo" width={32} draggable={false} />
     },
     {
-        name: "Dart",
-        icon: <i className="devicon-dart-plain colored text-[2rem]"/>
-    },
-    {
         name: "MongoDB",
         icon: <i className="devicon-mongodb-plain colored text-[2rem]"/>
     },
