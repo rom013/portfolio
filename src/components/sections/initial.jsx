@@ -7,7 +7,8 @@ import cv from "../../assets/docs/RomulloMelo.pdf"
 export default function InitialSection({refs}) {
     return (
         <section
-            className="flex flex-col-reverse justify-center my-10 sm:my-0 sm:flex-row gap-5 h-svh w-screen"
+            // ref={refs.initialSection}
+            className="flex flex-col-reverse justify-center my-10 sm:my-0 sm:flex-row gap-5 h-svh w-full"
         >
             <section
                 className="px-8 md:flex-1 md:h-full flex flex-col-reverse md:flex-row items-center gap"

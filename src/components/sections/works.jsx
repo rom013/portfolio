@@ -5,11 +5,11 @@ import BtnNavigation from "../buttons/buttonNavigation"
 const WorksSection = ({ refs }) => {
     return (
         <section
-            className="w-screen h-screen bg-zinc-50 flex items-center"
+            className=" h-screen bg-zinc-50 flex items-center overflow-hidden"
             ref={refs.projectsSection}
         >
-            <main
-                className="flex flex-col items-center gap-6"
+             <main
+                className="flex flex-col items-center gap-6 "
             >
                 <div
                     className="w-full max-w-5xl border-x-2 overflow-hidden"
@@ -50,7 +50,7 @@ const WorksSection = ({ refs }) => {
                     className={"!p-0 border-none rotate-90 !rounded-full"}
                 />
 
-            </main>
+            </main> 
         </section>
     )
 }

@@ -52,6 +52,10 @@ const mySkills = [
         icon: <i className="devicon-nextjs-plain colored text-[2rem]"/>
     },
     {
+        name: "GraphQL",
+        icon: <i className="devicon-graphql-plain colored text-[2rem]"/>
+    },
+    {
         name: "SASS",
         icon: <i className="devicon-sass-plain colored text-[2rem]"/>
     },

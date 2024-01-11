@@ -3,7 +3,8 @@ import BtnNavigation from "../buttons/buttonNavigation";
 export default function AboutSection({ refs }) {
     return (
         <section
-            className="flex gap-5 h-screen w-screen"
+            // ref={refs.aboutSection}
+            className="flex gap-5 h-screen w-full items-center relative"
             id="sectionAbout"
         >
             <div
@@ -18,7 +19,7 @@ export default function AboutSection({ refs }) {
                 />
             </div>
             <div
-                className="flex flex-col justify-center gap-14"
+                className="flex flex-col justify-center gap-14 absolute md:relative bg-white md:bg-inherit mx-10 md:mx-0 p-6 md:p-0"
             >
                 <div
                     className="max-w-2xl flex flex-col gap-6 "

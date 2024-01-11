@@ -1,6 +1,6 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
@@ -39,7 +39,7 @@ export default function App() {
 
 	const scrollX = useRef()
 
-	useLayoutEffect(() => {
+	/*useEffect(() => {
 
 		gsap.fromTo(
 			refsInitialSection.imageProfile.current,
@@ -200,7 +200,7 @@ export default function App() {
 			.to(
 				refsContactSection.contactSection.current,
 				{
-					yPercent: -400,
+					yPercent: -420,
 					ease: "none",
 					duration: 2
 				}
@@ -208,24 +208,19 @@ export default function App() {
 		return (() => {
 			tlX.kill()
 		})
-	}, [])
+	}, [])*/
 
 	return (
 		<main
 			id="main"
-			className="!h-[100vh] overflow-hidden"
+			// className="!h-[100vh]"
 		>
-			<div
-				ref={scrollX}
-				className="flex w-[200vw]"
-			>
-				<InitialSection
-					refs={refsInitialSection}
-				/>
-				<AboutSection
-					refs={refsAboutSection}
-				/>
-			</div>
+			<InitialSection
+				refs={refsInitialSection}
+			/>
+			<AboutSection
+				refs={refsAboutSection}
+			/>
 
 			<SkillSection
 				refs={refsSkillSection}

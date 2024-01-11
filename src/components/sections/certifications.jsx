@@ -6,7 +6,7 @@ export default function CertificationSection({ refs }) {
     return (
         <section
             ref={refs.scroll}
-            className="bg-white h-screen w-screen flex items-center"
+            className="bg-white h-screen w-full flex items-center"
         >
             <main
                 className="max-w-5xl mx-auto w-full flex flex-col gap-8"

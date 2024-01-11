@@ -6,7 +6,7 @@ import { LinksContainer } from "../links"
 const ContactSection = ({ refs }) => {
     return (
         <section
-            className="w-screen h-screen bg-zinc-800 flex"
+            className="w-full h-svh bg-zinc-800 flex"
             ref={refs.contactSection}
         >
             <div

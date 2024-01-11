@@ -8,37 +8,11 @@ import BtnNavigation from "../buttons/buttonNavigation.jsx"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function SkillSection({ refs }) {
-
-    useEffect(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#sectionSkill",
-            start: "1800 bottom",
-            toggleActions: "play pause reverse reset",
-            // markers: true,
-            scrub: 1,
-            pin: true
-          }
-        });
-      
-        mySkills.forEach((_, i) => { // "_" é uma maneira de informar aos leitores do código que o valor não é relevante para a lógica da função
-          const selector = `.skill-${i}`;
-          tl.fromTo(
-            selector,
-            { duration: 1, y: 200, opacity: 0 },
-            { duration: 1, y: 0, opacity: 1 }
-          );
-        });
-      
-        return () => tl.kill();
-      }, []);
-      
-
     return (
         <section
             ref={refs.skillSection}
             id="sectionSkill"
-            className="flex items-center h-screen w-screen bg-white relative"
+            className="flex items-center h-screen w-full bg-white relative"
         >
             <div
                 className="max-w-screen-lg mx-auto w-full flex flex-col gap-8"
@@ -79,7 +53,9 @@ export default function SkillSection({ refs }) {
             <div
                 className="absolute bottom-0 w-full"
             >
-                <FooterImage />
+                <FooterImage
+                    className={"w-full"}
+                />
             </div>
         </section>
     )
