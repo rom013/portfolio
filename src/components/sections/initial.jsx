@@ -25,7 +25,7 @@ export default function InitialSection({ refs }) {
                     scrub: .7,
                 },
                 opacity: 0,
-                filter: "blur(4px)"
+                // filter: "blur(4px)"
             }
         )
 
