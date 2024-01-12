@@ -9,6 +9,30 @@ import positionNextPage from "../../funcs/positionNextPage.jsx"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function SkillSection({ refs }) {
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#sectionSkill",
+            start: "top center",
+            end: "center center",
+            markers: true,
+            scrub: 5,
+          }
+        });
+      
+        mySkills.forEach((_, i) => { // "_" é uma maneira de informar aos leitores do código que o valor não é relevante para a lógica da função
+          const selector = `.skill-${i}`;
+          tl.fromTo(
+            selector,
+            { duration: 1, y: 500, opacity: 0 },
+            { duration: 1, y: 0, opacity: 1 }
+          );
+        });
+      
+        return () => tl.kill();
+      }, []);
+
     return (
         <section
             ref={refs.skillSection}
@@ -32,7 +56,7 @@ export default function SkillSection({ refs }) {
                             <div
                                 key={skill.name}
                                 title={skill.name}
-                                className={`px-4 py-2 rounded-lg border border-black flex items-center gap-2 skill-${i}`}
+                                className={`px-4 py-2 rounded-lg border border-black flex items-center gap-2 skill-${i} select-none`}
                             >
                                 {skill.icon}
                                 {skill.name}
