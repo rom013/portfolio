@@ -16,7 +16,7 @@ export default function SkillSection({ refs }) {
             trigger: "#sectionSkill",
             start: "top center",
             end: "center center",
-            markers: true,
+            // markers: true,
             scrub: 5,
           }
         });

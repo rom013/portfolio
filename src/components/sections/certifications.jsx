@@ -1,12 +1,48 @@
+import { useEffect, useRef } from "react";
 import myCertificates from "../../db/myCertificates";
 import positionNextPage from "../../funcs/positionNextPage";
 import CardCertificate from "../box/cardCertificate";
 import BtnNavigation from "../buttons/buttonNavigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function CertificationSection({ refs }) {
+    const boxCertificate = useRef()
+    const certificateSection = useRef()
+
+    useEffect(()=>{
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: certificateSection.current,
+                markers: true,
+                start: "top center",
+                end: "center center",
+                scrub: 2
+            }
+        })
+
+        myCertificates.map((_, i) => {
+            const selector = `.cert-${i}`
+            tl.fromTo(
+                selector,
+                {
+                    xPercent: 200
+                },
+                {
+                    xPercent: 0
+                }
+            )
+        })
+
+
+        return ()=>tl.kill()
+    },[])
+
     return (
         <section
-            ref={refs.scroll}
+            ref={certificateSection}
             className=" h-svh w-full flex items-center"
         >
             <main
@@ -26,7 +62,7 @@ export default function CertificationSection({ refs }) {
                 </div>
 
                 <div
-                    className="w-full max-h-[600px] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="w-full max-h-[600px] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden"
                 >
                     {
                         myCertificates.map((certficate, key) => <CardCertificate
@@ -36,6 +72,8 @@ export default function CertificationSection({ refs }) {
                                 linkConfirm={certficate.linkConfirm}
                                 nameLink={certficate.nameLink}
                                 key={key}
+                                boxCertificate={boxCertificate}
+                                index={key}
                             />
                         )
                     }

@@ -1,7 +1,7 @@
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import { twMerge } from "tailwind-merge";
 
-export default function CardCertificate({ title, description, linkConfirm, nameLink, time }) {
+export default function CardCertificate({ title, description, linkConfirm, nameLink, time, boxCertificate, index }) {
     
     const classNameRandom = () => {
         const active = parseInt(Math.random()*2)
@@ -10,7 +10,8 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
 
     return (
         <div 
-            className="flex gap-6 h-fit"    
+            className={`flex gap-6 h-fit cert-${index}`}
+            ref={boxCertificate} 
         >
             <div 
                 className={`${twMerge("min-w-8 min-h-8 md:min-w-16 md:min-h-16 h-8 md:h-16 rounded-full bg-zinc-200 flex justify-center items-center", classNameRandom())}`} 
