@@ -4,14 +4,38 @@ import BtnNavigation from "../buttons/buttonNavigation";
 import { LinksContainer } from "../links";
 import cv from "../../assets/docs/RomulloMelo.pdf"
 import positionNextPage from "../../funcs/positionNextPage";
+import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function InitialSection({ refs }) {
 
-    
+    const section = useRef()
+
+    useEffect(()=>{
+
+        const animateSection = gsap.to(
+            section.current,
+            {
+                scrollTrigger: {
+                    trigger: section.current,
+                    start: "top top",
+                    scrub: .7,
+                },
+                opacity: 0,
+                filter: "blur(4px)"
+            }
+        )
+
+        return ()=>{ animateSection.kill() }
+    },[])
 
     return (
         <section
-            className="flex flex-col-reverse justify-center my-10 sm:my-0 sm:flex-row gap-5 h-svh w-full"
+            ref={section}
+            className="flex flex-col-reverse justify-center py-10 sm:py-0 sm:flex-row gap-5 h-svh w-full"
         >
             <section
                 className="px-8 md:flex-1 md:h-full flex flex-col-reverse md:flex-row items-center gap"
@@ -72,14 +96,13 @@ export default function InitialSection({ refs }) {
 
             </section>
             <div
-                className="w-40 h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative md:glitch_img_tl"
+                className="min-w-40 min-h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative md:glitch_img_tl"
             >
                 <img
                     className="w-full h-full object-cover"
                     src={Rom01}
                     alt="Rômullo Melo"
                     draggable={false}
-                    ref={refs.imageProfile}
                 />
             </div>
         </section>

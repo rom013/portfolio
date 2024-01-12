@@ -11,7 +11,7 @@ const CardProjects = ({ image, name, time, description, auth, techs }) => {
         <>
             <button
                 onClick={() => setShowWork(!showWork)}
-                className="px-3 py-6 bg-zinc-100 w-full"
+                className={`px-3 py-6 bg-zinc-100 w-full ${showWork ? "opacity-0" : "opacity-100"} transition-all duration-75`}
                 title=""
             >
                 <img

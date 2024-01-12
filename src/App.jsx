@@ -1,6 +1,6 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
 import InitialSection from "./components/sections/initial"
 import AboutSection from "./components/sections/about"
 import SkillSection from "./components/sections/skill"
@@ -34,8 +34,6 @@ export default function App() {
 	const refsContactSection = {
 		contactSection: useRef()
 	}
-
-	
 
 	return (
 		<main

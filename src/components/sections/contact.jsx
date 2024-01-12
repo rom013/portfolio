@@ -45,11 +45,15 @@ const ContactSection = ({ refs }) => {
                     className={"w-full !border-white text-white hover:bg-white hover:text-black"}
                 />
 
-                <BtnNavigation
-                    type="arrow"
-                    position={0}
-                    className={"!p-0 border-none text-white -rotate-90 !rounded-full"}
-                />
+                <div
+                    className="w-full flex justify-center"
+                >
+                    <BtnNavigation
+                        type="arrow"
+                        position={0}
+                        className={"!p-0 border-none text-white -rotate-90 !rounded-full"}
+                    />
+                </div>
             </div>
         </section>
     )
