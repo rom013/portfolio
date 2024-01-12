@@ -19,26 +19,24 @@ body {
   @apply flex justify-center items-center text-center py-4 px-8 rounded border border-black text-lg font-Lato hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300;
 }
 
-@keyframes scale-up-br {
+@keyframes scale-in-center {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
     opacity: 1;
   }
 }
 
-.glitch_img_tl{
-  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:top-0
+.glitch_img_tl {
+  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:top-0;
 }
-.glitch_img_rb{
-  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:bottom-0
+.glitch_img_rb {
+  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:bottom-0;
+}
+
+.blur-end {
+  @apply after:block after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-zinc-50 after:absolute after:bottom-0 after:w-full after:h-20;
 }

@@ -7,10 +7,10 @@ export default function CertificationSection({ refs }) {
     return (
         <section
             ref={refs.scroll}
-            className=" h-screen w-full flex items-center"
+            className=" h-svh w-full flex items-center"
         >
             <main
-                className="max-w-5xl mx-auto w-full flex flex-col gap-8"
+                className="max-w-5xl mx-auto px-8 w-full flex flex-col gap-8"
             >
                 <div>
                     <h2
@@ -26,7 +26,7 @@ export default function CertificationSection({ refs }) {
                 </div>
 
                 <div
-                    className="w-full max-h-[600px] overflow-y-auto grid grid-cols-2 gap-6"
+                    className="w-full max-h-[600px] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                     {
                         myCertificates.map((certficate, key) => <CardCertificate

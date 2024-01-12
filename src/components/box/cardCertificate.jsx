@@ -13,7 +13,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
             className="flex gap-6 h-fit"    
         >
             <div 
-                className={`${twMerge("min-w-16 min-h-16 h-16 rounded-full bg-zinc-200 flex justify-center items-center", classNameRandom())}`} 
+                className={`${twMerge("min-w-8 min-h-8 md:min-w-16 md:min-h-16 h-8 md:h-16 rounded-full bg-zinc-200 flex justify-center items-center", classNameRandom())}`} 
             />
             <div
                 className="flex flex-col gap-4 h-fit"

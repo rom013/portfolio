@@ -13,10 +13,10 @@ export default function SkillSection({ refs }) {
         <section
             ref={refs.skillSection}
             id="sectionSkill"
-            className="flex items-center h-screen w-full relative"
+            className="flex items-center min-h-svh w-full relative"
         >
             <div
-                className="max-w-screen-lg mx-auto w-full flex flex-col gap-8"
+                className="max-w-screen-lg mx-auto px-8 py-10 md:py-0 md:px-0 w-full flex flex-col gap-8"
             >
                 <h2
                     className="font-sora text-[2rem] font-bold"
@@ -55,7 +55,7 @@ export default function SkillSection({ refs }) {
                 className="absolute bottom-0 w-full"
             >
                 <FooterImage
-                    className={"w-full"}
+                    className={"w-full h-fit"}
                 />
             </div>
         </section>

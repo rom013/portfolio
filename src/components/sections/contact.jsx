@@ -2,15 +2,16 @@ import myContact from "../../db/myContact"
 import BtnDownload from "../buttons/buttonDownload"
 import CV from "../../assets/docs/RomulloMelo.pdf"
 import { LinksContainer } from "../links"
+import BtnNavigation from "../buttons/buttonNavigation"
 
 const ContactSection = ({ refs }) => {
     return (
         <section
-            className="w-full h-svh bg-zinc-800 flex"
+            className="w-full h-[calc(100svh+80px)] bg-zinc-800 flex"
             ref={refs.contactSection}
         >
             <div
-                className="max-w-2xl w-full h-full"
+                className="max-w-2xl w-full h-full hidden md:block"
             >
                 <img
                     className="w-full h-full object-cover grayscale"
@@ -42,6 +43,12 @@ const ContactSection = ({ refs }) => {
                     file={CV}
                     title={"Baixar CV"}
                     className={"w-full !border-white text-white hover:bg-white hover:text-black"}
+                />
+
+                <BtnNavigation
+                    type="arrow"
+                    position={0}
+                    className={"!p-0 border-none text-white -rotate-90 !rounded-full"}
                 />
             </div>
         </section>
