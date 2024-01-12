@@ -1,4 +1,4 @@
-import { CaretCircleDoubleRight } from "@phosphor-icons/react"
+import { CaretCircleRight } from "@phosphor-icons/react"
 import { twMerge } from "tailwind-merge"
 
 export default function BtnNavigation({ title, position, type="default", className }){
@@ -7,7 +7,7 @@ export default function BtnNavigation({ title, position, type="default", classNa
             case "default":
                 return title
             case "arrow":
-                return <CaretCircleDoubleRight size={32} />
+                return <CaretCircleRight size={32} />
         }
     }
     

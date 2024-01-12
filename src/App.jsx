@@ -40,7 +40,6 @@ export default function App() {
 	return (
 		<main
 			id="main"
-			// className="!h-[100vh]"
 		>
 			<InitialSection
 				refs={refsInitialSection}
