@@ -1,10 +1,71 @@
+import { useEffect, useRef } from "react";
 import positionNextPage from "../../funcs/positionNextPage";
 import BtnNavigation from "../buttons/buttonNavigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutSection({ refs }) {
+    const aboutSection = useRef()
+    const contentAbout = useRef()
+
+    useEffect(() => {
+
+        const timeLine = gsap.timeline({
+            scrollTrigger: {
+                trigger: aboutSection.current,
+                // markers: true,
+                start: "+=100 bottom",
+                end: "center center",
+                scrub: .7,
+                // pin: true
+            }
+        })
+
+        timeLine
+            .fromTo(
+                aboutSection.current,
+                {
+                    opacity: 0
+                },
+                {
+                    opacity: 1
+                }
+            )
+            .fromTo(
+                contentAbout.current,
+                {
+                    scale: 0
+                },
+                {
+                    scale: 1
+                }
+            )
+
+        gsap.fromTo(
+            aboutSection.current,
+            {
+                opacity: 1
+            },
+            {
+                scrollTrigger: {
+                    trigger: aboutSection.current,
+                    // markers: true,
+                    start: "bottom center",
+                    end: "+=10 center",
+                    toggleActions: "play none reset none",
+                },
+                opacity: 0,
+            }
+        )
+
+
+    }, [])
+
     return (
         <section
-            // ref={refs.aboutSection}
+            ref={aboutSection}
             className="flex gap-5 h-screen w-full items-center relative"
             id="sectionAbout"
         >
@@ -24,7 +85,7 @@ export default function AboutSection({ refs }) {
             >
                 <div
                     className="max-w-2xl flex flex-col gap-6 "
-                    ref={refs.contentAbout}
+                    ref={contentAbout}
                 >
                     <h2
                         className="font-sora font-bold text-[2rem] text-zinc-800"
@@ -61,7 +122,7 @@ export default function AboutSection({ refs }) {
                     <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
-                        position={positionNextPage()*2}
+                        position={positionNextPage() * 2}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
