@@ -3,18 +3,21 @@ import BtnDownload from "../buttons/buttonDownload";
 import BtnNavigation from "../buttons/buttonNavigation";
 import { LinksContainer } from "../links";
 import cv from "../../assets/docs/RomulloMelo.pdf"
+import positionNextPage from "../../funcs/positionNextPage";
 
-export default function InitialSection({refs}) {
+export default function InitialSection({ refs }) {
+
+    
+
     return (
         <section
-            // ref={refs.initialSection}
             className="flex flex-col-reverse justify-center my-10 sm:my-0 sm:flex-row gap-5 h-svh w-full"
         >
             <section
                 className="px-8 md:flex-1 md:h-full flex flex-col-reverse md:flex-row items-center gap"
             >
 
-                <LinksContainer 
+                <LinksContainer
                     className={"md:ml-10 flex-row md:flex-col mt-10"}
                 />
 
@@ -41,37 +44,35 @@ export default function InitialSection({refs}) {
                         </p>
                     </div>
 
-                    <div
-                        ref={refs.btnNavOne}
-                        className={"absolute right-0"}
+                    <div 
+                        className="flex flex-col items-center gap-8"
                     >
+                        <div
+                            className="flex gap-10 flex-col md:flex-row md:justify-center w-full"
+                        >
+                            <BtnNavigation
+                                title={"Conhecer meus trabalhos"}
+                                position={window.innerHeight * 4}
+                                className={"w-full md:w-fit"}
+                            />
+                            <BtnDownload
+                                file={cv}
+                                title={"Baixar CV"}
+                                className={"w-full md:w-fit"}
+                            />
+                        </div>
                         <BtnNavigation
-                            position={window.innerHeight}
+                            position={positionNextPage()}
                             type="arrow"
-                            className={"!p-0 border-none !rounded-full"}
+                            className={"!p-0 border-none !rounded-full rotate-90"}
                         />
-                    </div>
 
-                    <div
-                        className="flex gap-10 flex-col md:flex-row md:justify-center w-full"
-                    >
-                        <BtnNavigation
-                            title={"Conhecer meus trabalhos"}
-                            position={window.innerHeight*4}
-                            className={"w-full md:w-fit"}
-                        />
-                        <BtnDownload
-                            file={cv}
-                            title={"Baixar CV"}
-                            className={"w-full md:w-fit"}
-                        />
                     </div>
-
                 </div>
 
             </section>
             <div
-                className="w-40 h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden"
+                className="w-40 h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative md:glitch_img_tl"
             >
                 <img
                     className="w-full h-full object-cover"

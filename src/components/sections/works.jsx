@@ -1,11 +1,12 @@
 import myWorks from "../../db/myWorks"
+import positionNextPage from "../../funcs/positionNextPage"
 import CardProjects from "../box/cardProjects"
 import BtnNavigation from "../buttons/buttonNavigation"
 
 const WorksSection = ({ refs }) => {
     return (
         <section
-            className=" h-screen bg-zinc-50 flex items-center overflow-hidden"
+            className=" h-screen flex items-center overflow-hidden"
             ref={refs.projectsSection}
         >
              <main
@@ -27,12 +28,13 @@ const WorksSection = ({ refs }) => {
                     ref={refs.slideWorks}
                 >
                     {
-                        myWorks.map(works => <CardProjects
+                        myWorks.map((works, key) => <CardProjects
                             auth={works.auth}
                             description={works.description}
                             image={works.image}
                             name={works.name}
                             time={works.time}
+                            key={key}
                         />)
                     }
                 </div>
@@ -45,7 +47,7 @@ const WorksSection = ({ refs }) => {
 
                 <BtnNavigation
                     type="arrow"
-                    position={window.innerHeight*5}
+                    position={positionNextPage()*5}
                     className={"!p-0 border-none rotate-90 !rounded-full"}
                 />
 

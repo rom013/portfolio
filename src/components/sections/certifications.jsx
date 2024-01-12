@@ -1,4 +1,5 @@
 import myCertificates from "../../db/myCertificates";
+import positionNextPage from "../../funcs/positionNextPage";
 import CardCertificate from "../box/cardCertificate";
 import BtnNavigation from "../buttons/buttonNavigation";
 
@@ -6,7 +7,7 @@ export default function CertificationSection({ refs }) {
     return (
         <section
             ref={refs.scroll}
-            className="bg-white h-screen w-full flex items-center"
+            className=" h-screen w-full flex items-center"
         >
             <main
                 className="max-w-5xl mx-auto w-full flex flex-col gap-8"
@@ -28,12 +29,13 @@ export default function CertificationSection({ refs }) {
                     className="w-full max-h-[600px] overflow-y-auto grid grid-cols-2 gap-6"
                 >
                     {
-                        myCertificates.map(certficate => <CardCertificate
+                        myCertificates.map((certficate, key) => <CardCertificate
                                 title={certficate.title}
                                 description={certficate.description}
                                 time={certficate.time}
                                 linkConfirm={certficate.linkConfirm}
                                 nameLink={certficate.nameLink}
+                                key={key}
                             />
                         )
                     }
@@ -44,7 +46,7 @@ export default function CertificationSection({ refs }) {
                 >
                     <BtnNavigation
                         type="arrow"
-                        position={window.innerHeight*4}
+                        position={positionNextPage()*4}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

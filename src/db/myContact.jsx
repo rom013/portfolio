@@ -5,7 +5,7 @@ const myContact = [
         name: "Email",
         link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=romullomelo0130@gmail.com&body=Ol%C3%A1+R%C3%B4mullo",
         title: "romullomelo0130@gmail.com",
-        icon: <Envelope size={32} />,
+        icon: <Envelope size={32}/>,
     },
     {
         name: "Github",

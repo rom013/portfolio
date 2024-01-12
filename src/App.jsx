@@ -40,6 +40,7 @@ export default function App() {
 	return (
 		<main
 			id="main"
+			className="bg-zinc-50"
 		>
 			<InitialSection
 				refs={refsInitialSection}

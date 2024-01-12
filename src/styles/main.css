@@ -35,3 +35,10 @@ body {
     opacity: 1;
   }
 }
+
+.glitch_img_tl{
+  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:top-0
+}
+.glitch_img_rb{
+  @apply after:h-20 after:w-1/2 after:bg-zinc-50 after:block after:absolute after:bottom-0
+}

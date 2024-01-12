@@ -1,3 +1,4 @@
+import positionNextPage from "../../funcs/positionNextPage";
 import BtnNavigation from "../buttons/buttonNavigation";
 
 export default function AboutSection({ refs }) {
@@ -8,7 +9,7 @@ export default function AboutSection({ refs }) {
             id="sectionAbout"
         >
             <div
-                className="max-w-2xl w-full h-full"
+                className="max-w-2xl w-full h-full  glitch_img_rb relative"
                 ref={refs.imageAbout}
             >
                 <img
@@ -60,7 +61,7 @@ export default function AboutSection({ refs }) {
                     <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
                         type="arrow"
-                        position={window.innerHeight*2}
+                        position={positionNextPage()*2}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

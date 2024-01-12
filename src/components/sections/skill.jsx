@@ -4,6 +4,7 @@ import FooterImage from "../footerImage.jsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import BtnNavigation from "../buttons/buttonNavigation.jsx"
+import positionNextPage from "../../funcs/positionNextPage.jsx"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,7 +13,7 @@ export default function SkillSection({ refs }) {
         <section
             ref={refs.skillSection}
             id="sectionSkill"
-            className="flex items-center h-screen w-full bg-white relative"
+            className="flex items-center h-screen w-full relative"
         >
             <div
                 className="max-w-screen-lg mx-auto w-full flex flex-col gap-8"
@@ -44,7 +45,7 @@ export default function SkillSection({ refs }) {
                 >
                     <BtnNavigation
                         type="arrow"
-                        position={window.innerHeight*3}
+                        position={positionNextPage()*3}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
