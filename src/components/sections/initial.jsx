@@ -46,7 +46,7 @@ export default function InitialSection({refs}) {
                         className={"absolute right-0"}
                     >
                         <BtnNavigation
-                            position={1000}
+                            position={window.innerHeight}
                             type="arrow"
                             className={"!p-0 border-none !rounded-full"}
                         />
@@ -57,7 +57,7 @@ export default function InitialSection({refs}) {
                     >
                         <BtnNavigation
                             title={"Conhecer meus trabalhos"}
-                            position={5000}
+                            position={window.innerHeight*4}
                             className={"w-full md:w-fit"}
                         />
                         <BtnDownload

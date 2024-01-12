@@ -44,7 +44,7 @@ export default function SkillSection({ refs }) {
                 >
                     <BtnNavigation
                         type="arrow"
-                        position={3000}
+                        position={window.innerHeight*3}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

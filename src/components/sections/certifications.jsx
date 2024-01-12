@@ -44,7 +44,7 @@ export default function CertificationSection({ refs }) {
                 >
                     <BtnNavigation
                         type="arrow"
-                        position={4000}
+                        position={window.innerHeight*4}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

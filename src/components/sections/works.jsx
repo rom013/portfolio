@@ -38,7 +38,6 @@ const WorksSection = ({ refs }) => {
                 </div>
 
                 <button
-                    onMouseEnter={e => console.log(e)}
                     className="btn-style"
                 >
                     Mais trabalhos
@@ -46,7 +45,7 @@ const WorksSection = ({ refs }) => {
 
                 <BtnNavigation
                     type="arrow"
-                    position={6000}
+                    position={window.innerHeight*5}
                     className={"!p-0 border-none rotate-90 !rounded-full"}
                 />
 
