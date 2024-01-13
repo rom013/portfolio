@@ -78,7 +78,7 @@ const WorksSection = ({ refs }) => {
                 className="flex flex-col items-center gap-6 px-8 md:px-0"
             >
                 <div
-                    className="w-full max-w-5xl md:border-x-2"
+                    className="w-full max-w-5xl md:border-x-2 overflow-hidden md:overflow-auto"
                 >
                     <h2
                         ref={title}

@@ -1,17 +1,62 @@
-import myContact from "../../db/myContact"
 import BtnDownload from "../buttons/buttonDownload"
 import CV from "../../assets/docs/RomulloMelo.pdf"
 import { LinksContainer } from "../links"
 import BtnNavigation from "../buttons/buttonNavigation"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect, useRef } from "react"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const ContactSection = ({ refs }) => {
+
+    const contactSection = useRef()
+    const content = useRef()
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: contactSection.current,
+                // markers: true,
+                scrub: 2,
+                start: "top bottom",
+                end: "bottom bottom"
+            }
+        })
+
+        tl
+            .fromTo(
+                contactSection.current,
+                {
+                    opacity: 0,
+                },
+                {
+                    opacity: 1,
+                }
+            )
+            for (let i = 0; i < 4; i++) {
+                // const element = array[i];
+                
+                tl.fromTo(
+                    `.content-${i+1}`,
+                    {
+                        xPercent: -100,
+                    },
+                    {
+                        xPercent: 0,
+                        ease: "none"
+                    }
+                )
+            }
+    }, [])
+
     return (
         <section
             className="w-full h-[calc(100svh+80px)] bg-zinc-800 flex"
-            ref={refs.contactSection}
+            ref={contactSection}
         >
             <div
-                className="max-w-2xl w-full h-full hidden md:block"
+                className="max-w-2xl w-full h-full hidden md:block z-10"
             >
                 <img
                     className="w-full h-full object-cover grayscale"
@@ -22,31 +67,30 @@ const ContactSection = ({ refs }) => {
             </div>
             <div
                 className="flex flex-col justify-center gap-14 w-full px-8"
+                ref={content}
             >
                 <h2
-                    className="text-white text-[2rem] font-Sora font-bold"
+                    className="text-white text-[2rem] font-Sora font-bold content-1"
                 >
                     Entre em contato comigo
                 </h2>
 
                 <ul
-                    className="flex flex-col gap-8 text-white"
+                    className="flex flex-col gap-8 text-white content-2"
                 >
-                    <LinksContainer 
-                        showName="true" 
-                        classNameItem={""} 
-
+                    <LinksContainer
+                        showName="true"
                     />
                 </ul>
 
                 <BtnDownload
                     file={CV}
                     title={"Baixar CV"}
-                    className={"w-full !border-white text-white hover:bg-white hover:text-black"}
+                    className={"w-full !border-white text-white hover:bg-white hover:text-black content-3"}
                 />
 
                 <div
-                    className="w-full flex justify-center"
+                    className="w-full flex justify-center content-4"
                 >
                     <BtnNavigation
                         type="arrow"
