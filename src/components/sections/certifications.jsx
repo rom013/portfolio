@@ -16,7 +16,7 @@ export default function CertificationSection({ refs }) {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: certificateSection.current,
-                markers: true,
+                // markers: true,
                 start: "top center",
                 end: "center center",
                 scrub: 2
