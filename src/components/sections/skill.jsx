@@ -56,7 +56,7 @@ export default function SkillSection({ refs }) {
                             <div
                                 key={skill.name}
                                 title={skill.name}
-                                className={`px-4 py-2 rounded-lg border border-black flex items-center gap-2 skill-${i} select-none`}
+                                className={`px-4 py-2 rounded-lg border border-black flex items-center gap-2 skill-${i} select-none hover:animate-[jello-horizontal_0.9s_both]`}
                             >
                                 {skill.icon}
                                 {skill.name}

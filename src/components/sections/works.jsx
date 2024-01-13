@@ -26,7 +26,7 @@ const WorksSection = ({ refs }) => {
                     // markers: true,
                     start: "top bottom",
                     end: "top top",
-                    scrub: 5
+                    scrub: 1
                 },
                 y: 0
             }
