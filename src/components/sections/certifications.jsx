@@ -28,10 +28,12 @@ export default function CertificationSection({ refs }) {
             tl.fromTo(
                 selector,
                 {
-                    xPercent: 200
+                    xPercent: 200,
+                    scale: 0
                 },
                 {
-                    xPercent: 0
+                    xPercent: 0,
+                    scale: 1
                 }
             )
         })
