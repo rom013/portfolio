@@ -9,13 +9,12 @@ export function LinksContainer({ showName = false, className, classNameItem }){
         >
             {
                 myContact.map((contact, i) => {
-                    return <li className={twMerge("flex",classNameItem)}>
+                    return <li key={`key_${i}`} className={twMerge("flex",classNameItem)}>
                         <a 
                             href={contact.link}
                             target="_blank"
                             title={contact.name}
                             className="flex gap-6 "
-                            key={i}
                         >
                             { contact.icon }
                             { 

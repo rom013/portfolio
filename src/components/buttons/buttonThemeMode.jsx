@@ -7,7 +7,6 @@ const ButtonThemeMode = () => {
 
     useEffect(() => {
         saveThemeMode()
-        console.log(active);
         active
             ? document.body.classList.add("dark")
             : document.body.classList.remove("dark") 

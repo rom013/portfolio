@@ -64,8 +64,8 @@ const ModalWorks = ({ name, showWork, setShowWork, image, time, description, aut
                     className="flex gap-1 italic"
                 >
                     {
-                        techs.map(t => {
-                            return <span>#{t}</span>
+                        techs.map((t,i) => {
+                            return <span key={i}>#{t}</span>
                         })
                     }
                 </div>
