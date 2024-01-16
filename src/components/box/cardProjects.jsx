@@ -11,14 +11,14 @@ const CardProjects = ({ image, name, time, description, auth, techs, urlSite }) 
         <>
             <button
                 onClick={() => setShowWork(!showWork)}
-                className={`px-3 py-6 max-w-96 max-h-60 bg-zinc-100 w-full ${showWork ? "opacity-0" : "opacity-100"} transition-all duration-75 group`}
+                className={`px-3 py-6 max-w-96 max-h-60 bg-zinc-100 dark:bg-zinc-800 w-full ${showWork ? "opacity-0" : "opacity-100"} transition-all duration-75 hover:scale-105`}
                 title=""
             >
                 <img
                     src={image}
                     alt={name}
                     draggable={false}
-                    className="object-cover h-full w-full md:w-auto group-hover:scale-105"
+                    className="object-cover h-full w-full md:w-auto"
                 />
             </button>
             {

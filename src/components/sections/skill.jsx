@@ -43,7 +43,7 @@ export default function SkillSection({ refs }) {
                 className="max-w-screen-lg mx-auto px-8 py-10 md:py-0 md:px-0 w-full flex flex-col gap-8"
             >
                 <h2
-                    className="font-sora text-[2rem] font-bold"
+                    className="subtitle"
                 >
                     SKILLS
                 </h2>
@@ -56,7 +56,7 @@ export default function SkillSection({ refs }) {
                             <div
                                 key={skill.name}
                                 title={skill.name}
-                                className={`px-4 py-2 rounded-lg border border-black flex items-center gap-2 skill-${i} select-none hover:animate-[jello-horizontal_0.9s_both]`}
+                                className={`px-4 py-2 rounded-lg dark:bg-zinc-800 border border-black dark:border-zinc-50 text-zinc-950 dark:text-zinc-50 flex items-center gap-2 skill-${i} select-none hover:animate-[jello-horizontal_0.9s_both]`}
                             >
                                 {skill.icon}
                                 {skill.name}

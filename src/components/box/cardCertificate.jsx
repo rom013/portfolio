@@ -21,7 +21,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
             >
                 <div  className="flex flex-col">
                     <strong
-                        className="font-sora text-2xl font-bold text-zinc-900"
+                        className="font-sora text-2xl font-bold text-zinc-900 dark:text-zinc-200"
                     >
                         {title}
                     </strong>
@@ -40,7 +40,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
                     <a 
                         target="_blank" 
                         href={linkConfirm} 
-                        className="flex gap-2 items-center w-fit hover:underline"
+                        className="flex gap-2 items-center w-fit hover:underline dark:text-zinc-200"
                     >
                         {nameLink} <ArrowSquareOut />
                     </a>

@@ -82,7 +82,7 @@ const WorksSection = ({ refs }) => {
                 >
                     <h2
                         ref={title}
-                        className="font-sora text-[3rem] md:text-[6rem] font-bold text-zinc-800 uppercase text-center"
+                        className="text-[3rem] md:text-[6rem] subtitle uppercase text-center"
                     >
                         Projetos
                     </h2>

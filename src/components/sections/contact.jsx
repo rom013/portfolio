@@ -34,25 +34,25 @@ const ContactSection = ({ refs }) => {
                     opacity: 1,
                 }
             )
-            for (let i = 0; i < 4; i++) {
-                // const element = array[i];
-                
-                tl.fromTo(
-                    `.content-${i+1}`,
-                    {
-                        xPercent: -100,
-                    },
-                    {
-                        xPercent: 0,
-                        ease: "none"
-                    }
-                )
-            }
+        for (let i = 0; i < 4; i++) {
+            // const element = array[i];
+
+            tl.fromTo(
+                `.content-${i + 1}`,
+                {
+                    xPercent: -100,
+                },
+                {
+                    xPercent: 0,
+                    ease: "none"
+                }
+            )
+        }
     }, [])
 
     return (
         <section
-            className="w-full h-[calc(100svh+80px)] bg-zinc-800 flex"
+            className="w-full h-[calc(100svh+80px)] bg-zinc-800 dark:bg-inherit flex"
             ref={contactSection}
         >
             <div
@@ -75,18 +75,15 @@ const ContactSection = ({ refs }) => {
                     Entre em contato comigo
                 </h2>
 
-                <ul
-                    className="flex flex-col gap-8 text-white content-2"
-                >
-                    <LinksContainer
-                        showName="true"
-                    />
-                </ul>
+                <LinksContainer
+                    showName="true"
+                    className={"content-2 !text-zinc-200"}
+                />
 
                 <BtnDownload
                     file={CV}
                     title={"Baixar CV"}
-                    className={"w-full !border-white text-white hover:bg-white hover:text-black content-3"}
+                    className={"!border-white !text-white content-3"}
                 />
 
                 <div
@@ -95,7 +92,7 @@ const ContactSection = ({ refs }) => {
                     <BtnNavigation
                         type="arrow"
                         position={0}
-                        className={"!p-0 border-none text-white -rotate-90 !rounded-full"}
+                        className={"!p-0 border-none !text-white -rotate-90 !rounded-full"}
                     />
                 </div>
             </div>

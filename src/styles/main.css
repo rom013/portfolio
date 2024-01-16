@@ -7,16 +7,26 @@ html {
   overflow-x: hidden;
 }
 
-/* ::-webkit-scrollbar {
-  @apply w-1;
-} */
-
-body {
-  @apply dark:bg-[#141414];
+.subtitle {
+  @apply font-Sora font-bold text-[2rem] text-zinc-800 dark:text-zinc-50;
 }
 
 .btn-style {
-  @apply flex justify-center items-center text-center py-4 px-8 rounded border border-black text-lg font-Lato hover:bg-zinc-900 hover:scale-95 hover:text-white transition-all duration-300;
+  @apply 
+    flex 
+    justify-center 
+    items-center 
+    text-center 
+    text-zinc-950 dark:text-zinc-200
+    py-4 px-8 
+    rounded 
+    border 
+    border-black dark:border-white
+    text-lg 
+    font-Lato 
+    hover:bg-zinc-900 hover:scale-95 hover:text-white 
+    transition-all 
+    duration-300;
 }
 
 @keyframes scale-in-center {
@@ -38,7 +48,17 @@ body {
 }
 
 .blur-end {
-  @apply after:block after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-zinc-50 after:absolute after:bottom-0 after:w-full after:h-20;
+  @apply 
+    after:block 
+    md:after:hidden
+    after:bg-gradient-to-b 
+    after:from-transparent 
+    after:via-transparent 
+    after:to-zinc-50 
+    after:absolute 
+    after:bottom-0 
+    after:w-full 
+    after:h-20;
 }
 
 @keyframes jello-horizontal {
@@ -69,5 +89,20 @@ body {
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rotate-scale-down {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(0.5) rotateZ(180deg);
+    transform: scale(0.5) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
   }
 }

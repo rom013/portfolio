@@ -52,12 +52,12 @@ export default function InitialSection({ refs }) {
                         className="flex md:block flex-col gap-3"
                     >
                         <p
-                            className="font-Sora text-[2rem] text-zinc-950 translate-y-1"
+                            className="font-Sora text-[2rem] text-zinc-950 dark:text-zinc-50 translate-y-1"
                         >
                             Eu sou
                         </p>
                         <h1
-                            className="font-Sora font-bold text-5xl md:text-[4rem] text-zinc-950"
+                            className="font-Sora font-bold text-5xl md:text-[4rem] text-zinc-950 dark:text-zinc-50"
                         >
                             Rômullo Melo
                         </h1>

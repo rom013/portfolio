@@ -81,14 +81,14 @@ export default function AboutSection({ refs }) {
                 />
             </div>
             <div
-                className="flex flex-col justify-center gap-14 absolute md:relative bg-white md:bg-inherit mx-10 md:mx-0 p-6 md:p-0"
+                className="flex flex-col justify-center gap-14 absolute md:relative bg-white dark:bg-zinc-950 dark:text-zinc-200 md:bg-inherit mx-10 md:mx-0 p-6 md:p-0"
             >
                 <div
                     className="max-w-2xl flex flex-col gap-6 "
                     ref={contentAbout}
                 >
                     <h2
-                        className="font-sora font-bold text-[2rem] text-zinc-800"
+                        className="subtitle"
                     >
                         Um pouco sobre eu
                     </h2>
@@ -96,18 +96,18 @@ export default function AboutSection({ refs }) {
                         className="flex flex-col gap-2"
                     >
                         <p
-                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                            className="font-lato text-zinc-700 dark:text-zinc-200 leading-relaxed text-base"
                         >
                             Meu nome é Rômullo Melo Oliveira, sou um programador especializado em front-end, com uma trajetória marcada por grandes projetos. Obtive minha formação em Desenvolvimento de Sistemas na ETEC Drª Ruth Cardoso, São Vicente, SP, e venho construindo minha carreira nessa área há dois anos.
 
                         </p>
                         <p
-                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                            className="font-lato text-zinc-700 dark:text-zinc-200 leading-relaxed text-base"
                         >
                             Encaro cada desafio como uma oportunidade de aprendizado, sem medo de errar, e busco sempre superar as expectativas. Estou pronto para contribuir com minha expertise em projetos desafiadores.
                         </p>
                         <p
-                            className="font-lato text-zinc-700 leading-relaxed text-base"
+                            className="font-lato text-zinc-700 dark:text-zinc-200 leading-relaxed text-base"
                         >
                             Vamos juntos alcançar resultados excepcionais!
                         </p>

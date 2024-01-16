@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge"
 export function LinksContainer({ showName = false, className, classNameItem }){
     return(
         <ul
-            className={twMerge("flex flex-col gap-10", className)}
+            className={twMerge("flex flex-col gap-10 text-zinc-950 dark:text-zinc-200", className)}
         >
             {
                 myContact.map((contact, i) => {
@@ -14,7 +14,7 @@ export function LinksContainer({ showName = false, className, classNameItem }){
                             href={contact.link}
                             target="_blank"
                             title={contact.name}
-                            className="flex gap-6"
+                            className="flex gap-6 "
                             key={i}
                         >
                             { contact.icon }

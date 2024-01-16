@@ -52,12 +52,12 @@ export default function CertificationSection({ refs }) {
             >
                 <div>
                     <h2
-                        className="font-sora text-[2rem] font-bold text-zinc-900 uppercase"
+                        className="subtitle"
                     >
                         Certificações
                     </h2>
                     <sub
-                        className="text-zinc-700 text-base font-Lato -translate-y-3 block"
+                        className="text-zinc-700 dark:text-zinc-200 text-base font-Lato -translate-y-3 block"
                     >
                         Conquistas e qualificações
                     </sub>

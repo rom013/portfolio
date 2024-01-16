@@ -7,6 +7,7 @@ import SkillSection from "./components/sections/skill"
 import CertificationSection from "./components/sections/certifications"
 import WorksSection from "./components/sections/works"
 import ContactSection from "./components/sections/contact"
+import ButtonThemeMode from "./components/buttons/buttonThemeMode"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,8 +39,9 @@ export default function App() {
 	return (
 		<main
 			id="main"
-			className="bg-zinc-50"
+			className="bg-zinc-50 dark:bg-zinc-950 transition-all duration-700"
 		>
+			<ButtonThemeMode/>
 			<InitialSection
 				refs={refsInitialSection}
 			/>
