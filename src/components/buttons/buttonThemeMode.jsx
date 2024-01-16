@@ -20,14 +20,14 @@ const ButtonThemeMode = () => {
 
     return (
         <button
-            className="p-4 bg-white rounded-full fixed bottom-6 right-6 z-50 shadow-md"
+            className="p-4 bg-white dark:bg-zinc-900 rounded-full fixed bottom-6 right-6 z-50 shadow-md border-2 border-zinc-900 dark:border-zinc-500"
             onClick={() => setActive(!active)}
         >
             {
                 active
                     ? <Sun
                         size={24}
-                        className="animate-[rotate-scale-down_0.65s_linear_both]"
+                        className="animate-[rotate-scale-down_0.65s_linear_both] text-white"
                         weight="fill"
                     />
                     : <Moon

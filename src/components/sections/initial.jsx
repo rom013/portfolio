@@ -96,7 +96,7 @@ export default function InitialSection({ refs }) {
 
             </section>
             <div
-                className="min-w-40 min-h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative md:glitch_img_tl"
+                className="min-w-40 min-h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative glitch_img_tl"
             >
                 <img
                     className="w-full h-full object-cover"
