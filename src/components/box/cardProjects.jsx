@@ -2,7 +2,7 @@ import { useState } from "react"
 import { createPortal } from "react-dom"
 import ModalWorks from "../modal/modalWorks"
 
-const CardProjects = ({ image, name, time, description, auth, techs }) => {
+const CardProjects = ({ image, name, time, description, auth, techs, urlSite }) => {
     const [showWork, setShowWork] = useState(false)
 
     showWork ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto"
@@ -11,19 +11,20 @@ const CardProjects = ({ image, name, time, description, auth, techs }) => {
         <>
             <button
                 onClick={() => setShowWork(!showWork)}
-                className={`px-3 py-6 bg-zinc-100 w-full ${showWork ? "opacity-0" : "opacity-100"} transition-all duration-75`}
+                className={`px-3 py-6 max-w-96 max-h-60 bg-zinc-100 w-full ${showWork ? "opacity-0" : "opacity-100"} transition-all duration-75 group`}
                 title=""
             >
                 <img
                     src={image}
                     alt={name}
                     draggable={false}
-                    className="max-w-96 max-h-60 object-cover w-full md:w-auto"
+                    className="object-cover h-full w-full md:w-auto group-hover:scale-105"
                 />
             </button>
             {
                 showWork && createPortal(
                     <ModalWorks
+                        urlSite={urlSite}
                         auth={auth}
                         description={description}
                         image={image}

@@ -1,4 +1,6 @@
-const ModalWorks = ({ name, showWork, setShowWork, image, time, description, auth, techs }) => {
+import { ArrowSquareOut } from "@phosphor-icons/react"
+
+const ModalWorks = ({ name, showWork, setShowWork, image, time, description, auth, techs, urlSite }) => {
 
     return (
         <main
@@ -25,11 +27,19 @@ const ModalWorks = ({ name, showWork, setShowWork, image, time, description, aut
                     <div
                         className="flex flex-col"
                     >
-                        <strong
-                            className="font-Lato font-bold text-2xl text-zinc-900"
+                        <a 
+                            href={urlSite}
+                            title={name}
+                            className="flex gap-2"
+                            target="_blank"
                         >
-                            {name}
-                        </strong>
+                            <strong
+                                className="font-Lato font-bold text-2xl text-zinc-900"
+                            >
+                                {name}
+                            </strong>
+                            <ArrowSquareOut/>
+                        </a>
                         <span
                             className="text-zinc-500"
                         >

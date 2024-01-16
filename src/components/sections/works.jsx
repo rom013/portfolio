@@ -93,13 +93,14 @@ const WorksSection = ({ refs }) => {
                     ref={slideWorks}
                 >
                     {
-                        myWorks.map((works, key) => <CardProjects
+                        myWorks.slice(0, 4).map((works, key) => <CardProjects
                             auth={works.auth}
                             description={works.description}
                             image={works.image}
                             name={works.name}
                             time={works.time}
                             techs={works.techs}
+                            urlSite={works.urlSite}
                             key={key}
                         />)
                     }
