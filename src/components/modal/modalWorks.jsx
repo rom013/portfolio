@@ -4,7 +4,7 @@ const ModalWorks = ({ name, showWork, setShowWork, image, time, description, aut
 
     return (
         <main
-            className="px-8 fixed inset-0 bg-zinc-300/80 backdrop-blur-sm flex justify-center items-center animate-[scale-in-center_0.5s_cubic-bezier(0.250,0.460,0.450,0.940)_both]"
+            className="px-8 fixed inset-0 bg-zinc-300/80 dark:bg-zinc-800/80 backdrop-blur-sm flex justify-center items-center animate-[scale-in-center_0.5s_cubic-bezier(0.250,0.460,0.450,0.940)_both]"
             onClick={(e) => e.target.tagName === "MAIN" && setShowWork(!showWork)}
         >
             <div
@@ -34,34 +34,36 @@ const ModalWorks = ({ name, showWork, setShowWork, image, time, description, aut
                             target="_blank"
                         >
                             <strong
-                                className="font-Lato font-bold text-2xl text-zinc-900"
+                                className="font-Lato font-bold text-2xl text-zinc-900 dark:text-zinc-50"
                             >
                                 {name}
                             </strong>
-                            <ArrowSquareOut/>
+                            <ArrowSquareOut
+                                className="text-zinc-950 dark:text-zinc-50"
+                            />
                         </a>
                         <span
-                            className="text-zinc-500"
+                            className="text-zinc-500 dark:text-zinc-300"
                         >
                             {time}
                         </span>
                     </div>
 
-                    <div
+                    {/* <div
                         className="flex gap-1"
                     >
                         <span>@{auth}</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 <p
-                    className="text-zinc-800 leading-relaxed"
+                    className="text-zinc-800 dark:text-zinc-200 leading-relaxed"
                 >
                     {description}
                 </p>
 
                 <div
-                    className="flex gap-1 italic"
+                    className="flex gap-1 italic text-zinc-950 dark:text-zinc-200"
                 >
                     {
                         techs.map((t,i) => {
