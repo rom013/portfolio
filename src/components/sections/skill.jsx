@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import mySkills from "../../db/mySkills.jsx"
-import FooterImage from "../footerImage.jsx"
+import { FooterImage } from "../footerImage.jsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import BtnNavigation from "../buttons/buttonNavigation.jsx"
@@ -76,7 +76,7 @@ export default function SkillSection({ refs }) {
             </div>
 
             <div
-                className="absolute bottom-0 w-full"
+                className="absolute -bottom-20 w-full"
             >
                 <FooterImage
                     className={"w-full h-fit"}

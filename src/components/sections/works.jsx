@@ -71,7 +71,7 @@ const WorksSection = ({ refs }) => {
 
     return (
         <section
-            className="min-h-svh flex items-center md:overflow-x-hidden"
+            className="min-h-svh flex items-center md:overflow-x-hidden relative"
             ref={projectsSection}
         >
             <main
@@ -117,7 +117,6 @@ const WorksSection = ({ refs }) => {
                     position={positionNextPage() * 5}
                     className={"!p-0 border-none rotate-90 !rounded-full"}
                 />
-
             </main>
         </section>
     )

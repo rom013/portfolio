@@ -13,8 +13,30 @@ gsap.registerPlugin(ScrollTrigger)
 export default function InitialSection({ refs }) {
 
     const section = useRef()
+    const about = useRef()
+    const imgProfile = useRef()
 
-    useEffect(()=>{
+    useEffect(() => {
+        gsap.fromTo(
+            about.current,
+            {
+                xPercent: -100
+            },
+            {
+                xPercent: 0,
+                duration: 2
+            },
+        )
+        gsap.fromTo(
+            imgProfile.current,
+            {
+                xPercent: 100
+            },
+            {
+                xPercent: 0,
+                duration: 2
+            },
+        )
 
         const animateSection = gsap.to(
             section.current,
@@ -25,12 +47,11 @@ export default function InitialSection({ refs }) {
                     scrub: .7,
                 },
                 opacity: 0,
-                // filter: "blur(4px)"
             }
         )
 
-        return ()=>{ animateSection.kill() }
-    },[])
+        return () => { animateSection.kill() }
+    }, [])
 
     return (
         <section
@@ -39,6 +60,7 @@ export default function InitialSection({ refs }) {
         >
             <section
                 className="px-8 md:flex-1 md:h-full flex flex-col-reverse md:flex-row items-center gap"
+                ref={about}
             >
 
                 <LinksContainer
@@ -68,7 +90,7 @@ export default function InitialSection({ refs }) {
                         </p>
                     </div>
 
-                    <div 
+                    <div
                         className="flex flex-col items-center gap-8"
                     >
                         <div
@@ -97,6 +119,7 @@ export default function InitialSection({ refs }) {
             </section>
             <div
                 className="min-w-40 min-h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative glitch_img_tl"
+                ref={imgProfile}
             >
                 <img
                     className="w-full h-full object-cover"

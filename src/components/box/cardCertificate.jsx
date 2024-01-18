@@ -5,7 +5,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
     
     const classNameRandom = () => {
         const active = parseInt(Math.random()*2)
-        return active && "after:w-[90%] after:h-[90%] after:rounded-full after:block after:bg-zinc-200 border-2 border-zinc-200 !bg-white"
+        return active && "after:w-[90%] after:h-[90%] after:rounded-full after:block after:bg-zinc-200 after:dark:bg-zinc-700 border-2 border-zinc-200 dark:border-zinc-600 !bg-white dark:!bg-zinc-700"
     }
 
     return (
@@ -14,7 +14,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
             ref={boxCertificate} 
         >
             <div 
-                className={`${twMerge("min-w-8 min-h-8 md:min-w-16 md:min-h-16 h-8 md:h-16 rounded-full bg-zinc-200 flex justify-center items-center", classNameRandom())}`} 
+                className={`${twMerge("min-w-8 min-h-8 md:min-w-16 md:min-h-16 h-8 md:h-16 rounded-full bg-zinc-200 dark:bg-zinc-700 flex justify-center items-center", classNameRandom())}`} 
             />
             <div
                 className="flex flex-col gap-4 h-fit"

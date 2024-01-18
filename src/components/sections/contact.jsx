@@ -5,6 +5,7 @@ import BtnNavigation from "../buttons/buttonNavigation"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
+import { FooterContact } from "../footerImage"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -52,9 +53,17 @@ const ContactSection = ({ refs }) => {
 
     return (
         <section
-            className="w-full h-[calc(100svh+80px)] bg-zinc-800 dark:bg-inherit flex"
+            className="w-full h-[calc(100svh+80px)] bg-zinc-800 dark:bg-inherit flex relative"
             ref={contactSection}
         >
+            <div
+                className="absolute -top-28 w-full hidden md:block"
+            >
+                <FooterContact
+                    className={"w-full h-fit"}
+                    fill={"fill-zinc-800 dark:fill-zinc-950 transition-all duration-600"}
+                />
+            </div>
             <div
                 className="max-w-2xl w-full h-full hidden md:block z-10"
             >
