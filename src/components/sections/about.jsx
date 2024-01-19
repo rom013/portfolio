@@ -3,6 +3,8 @@ import positionNextPage from "../../funcs/positionNextPage";
 import BtnNavigation from "../buttons/buttonNavigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import rom013 from "../../assets/img/photo_rom013_02.webp"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -70,18 +72,18 @@ export default function AboutSection({ refs }) {
             id="sectionAbout"
         >
             <div
-                className="max-w-2xl w-full h-full  glitch_img_rb relative"
+                className="max-w-2xl w-full h-full glitch_img_rb relative hidden md:block"
                 ref={refs.imageAbout}
             >
                 <img
-                    className="w-full h-full object-cover grayscale"
-                    src={"https://images.pexels.com/photos/5749818/pexels-photo-5749818.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                    className="w-full h-full object-cover"
+                    src={rom013}
                     alt="Rômullo Melo"
                     draggable={false}
                 />
             </div>
             <div
-                className="flex flex-col justify-center gap-14 absolute md:relative bg-white dark:bg-zinc-950 dark:text-zinc-200 md:bg-inherit mx-10 md:mx-0 p-6 md:p-0"
+                className="flex flex-col justify-center gap-14  dark:text-zinc-200 mx-10 md:mx-0"
             >
                 <div
                     className="max-w-2xl flex flex-col gap-6 "

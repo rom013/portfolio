@@ -1,4 +1,4 @@
-import Rom01 from "../../assets/img/photo_rom013.png"
+import Rom01 from "../../assets/img/photo_rom013.jpg"
 import BtnDownload from "../buttons/buttonDownload";
 import BtnNavigation from "../buttons/buttonNavigation";
 import { LinksContainer } from "../links";
@@ -17,26 +17,26 @@ export default function InitialSection({ refs }) {
     const imgProfile = useRef()
 
     useEffect(() => {
-        gsap.fromTo(
-            about.current,
-            {
-                xPercent: -100
-            },
-            {
-                xPercent: 0,
-                duration: 2
-            },
-        )
-        gsap.fromTo(
-            imgProfile.current,
-            {
-                xPercent: 100
-            },
-            {
-                xPercent: 0,
-                duration: 2
-            },
-        )
+        // gsap.fromTo(
+        //     about.current,
+        //     {
+        //         xPercent: -100
+        //     },
+        //     {
+        //         xPercent: 0,
+        //         duration: 2
+        //     },
+        // )
+        // gsap.fromTo(
+        //     imgProfile.current,
+        //     {
+        //         xPercent: 100
+        //     },
+        //     {
+        //         xPercent: 0,
+        //         duration: 2
+        //     },
+        // )
 
         const animateSection = gsap.to(
             section.current,
@@ -68,23 +68,23 @@ export default function InitialSection({ refs }) {
                 />
 
                 <div
-                    className="flex flex-col gap-20 sm:h-full relative justify-around flex-1 items-center"
+                    className="flex flex-col gap-5 sm:h-full relative justify-around flex-1 items-center"
                 >
                     <div
                         className="flex md:block flex-col gap-3"
                     >
                         <p
-                            className="font-Sora text-[2rem] text-zinc-950 dark:text-zinc-50 translate-y-1"
+                            className="font-Sora text-[1.5rem] text-zinc-950 dark:text-zinc-50"
                         >
                             Eu sou
                         </p>
                         <h1
-                            className="font-Sora font-bold text-5xl md:text-[4rem] text-zinc-950 dark:text-zinc-50"
+                            className="font-Sora font-bold text-4xl md:text-[4rem] text-zinc-950 dark:text-zinc-50"
                         >
                             Rômullo Melo
                         </h1>
                         <p
-                            className="text-zinc-500 font-Lato text-2xl -translate-y-1"
+                            className="text-zinc-500 font-Lato text-xl"
                         >
                             Desenvolvedor front-end & design UI
                         </p>
@@ -118,7 +118,7 @@ export default function InitialSection({ refs }) {
 
             </section>
             <div
-                className="min-w-40 min-h-40 sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative glitch_img_tl"
+                className="w-40 min-h-40 h-40 border-2 border-black md:border-none dark:border-white sm:max-w-2xl sm:w-1/2 sm:h-full self-center rounded-full sm:rounded-none overflow-hidden relative glitch_img_tl"
                 ref={imgProfile}
             >
                 <img
