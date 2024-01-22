@@ -25,7 +25,7 @@ export default function CardCertificate({ title, description, linkConfirm, nameL
                     >
                         {title}
                     </strong>
-                    <time className="text-sm text-zinc-400">
+                    <time className="text-sm text-zinc-500">
                         { time }
                     </time>
                 </div>

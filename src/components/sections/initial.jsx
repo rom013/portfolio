@@ -73,11 +73,11 @@ export default function InitialSection({ refs }) {
                     <div
                         className="flex md:block flex-col gap-3"
                     >
-                        <p
-                            className="font-Sora text-[1.5rem] text-zinc-950 dark:text-zinc-50"
+                        <strong
+                            className="font-Sora text-[1.5rem] text-zinc-950 font-normal dark:text-zinc-50"
                         >
                             Eu sou
-                        </p>
+                        </strong>
                         <h1
                             className="font-Sora font-bold text-4xl md:text-[4rem] text-zinc-950 dark:text-zinc-50"
                         >

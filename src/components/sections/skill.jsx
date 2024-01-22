@@ -55,7 +55,7 @@ export default function SkillSection({ refs }) {
                         mySkills.map((skill, i) => (
                             <div
                                 key={skill.name}
-                                title={skill.name}
+                                title={`skill-${skill.name}`}
                                 className={`px-4 py-2 rounded-lg dark:bg-zinc-800 border border-black dark:border-zinc-50 text-zinc-950 dark:text-zinc-50 flex items-center gap-2 skill-${i} select-none hover:animate-[jello-horizontal_0.9s_both]`}
                             >
                                 {skill.icon}
