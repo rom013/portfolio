@@ -1,17 +1,17 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef } from "react"
-import InitialSection from "./components/sections/initial"
-import AboutSection from "./components/sections/about"
-import SkillSection from "./components/sections/skill"
-import CertificationSection from "./components/sections/certifications"
-import WorksSection from "./components/sections/works"
-import ContactSection from "./components/sections/contact"
-import ButtonThemeMode from "./components/buttons/buttonThemeMode"
+import InitialSection from "../components/sections/initial"
+import AboutSection from "../components/sections/about"
+import SkillSection from "../components/sections/skill"
+import CertificationSection from "../components/sections/certifications"
+import WorksSection from "../components/sections/works"
+import ContactSection from "../components/sections/contact"
+import ButtonThemeMode from "../components/buttons/buttonThemeMode"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function App() {
+export default function Home() {
 	const refsInitialSection = {
 		btnNavOne: useRef(),
 		imageProfile: useRef()

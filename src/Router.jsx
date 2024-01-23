@@ -1,15 +1,16 @@
 import { Route, Routes } from "react-router-dom"
-import App from "./App"
+import Home from "./pages/Home"
+import Works from "./pages/Works"
 
 const Router = () => {
   return (
     <Routes>
       <Route
-        element={<App />}
+        element={<Home />}
         path='/'
       />
       <Route
-        element={<h1>olla</h1>}
+        element={<Works />}
         path='/works'
       />
     </Routes>

@@ -5,10 +5,13 @@ import CardProjects from "../box/cardProjects"
 import BtnNavigation from "../buttons/buttonNavigation"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
+import { useNavigate } from "react-router-dom"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const WorksSection = ({ refs }) => {
+    const navigate = useNavigate()
+
     const projectsSection = useRef()
     const title = useRef()
     const slideWorks = useRef()
@@ -108,6 +111,7 @@ const WorksSection = ({ refs }) => {
 
                 <button
                     className="btn-style"
+                    onClick={()=>navigate("/works")}
                 >
                     Mais trabalhos
                 </button>
