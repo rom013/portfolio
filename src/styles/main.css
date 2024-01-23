@@ -17,9 +17,9 @@ html {
   @apply dark:bg-zinc-950 bg-zinc-50; 
 }
  
-body{
+/* body{
   @apply dark:bg-zinc-950 bg-zinc-50
-}
+} */
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
