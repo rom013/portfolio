@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import myCertificates from "../../db/myCertificates";
-import positionNextPage from "../../funcs/positionNextPage";
 import CardCertificate from "../box/cardCertificate";
 import BtnNavigation from "../buttons/buttonNavigation";
 import gsap from "gsap";
@@ -12,7 +11,11 @@ export default function CertificationSection({ refs }) {
     const boxCertificate = useRef()
     const certificateSection = useRef()
 
-    useEffect(()=>{
+    const [heightSection, setHeightSection] = useState()
+
+    useEffect(() => {
+        setHeightSection(certificateSection.current.clientHeight);
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: certificateSection.current,
@@ -39,8 +42,8 @@ export default function CertificationSection({ refs }) {
         })
 
 
-        return ()=>tl.kill()
-    },[])
+        return () => tl.kill()
+    }, [])
 
     return (
         <section
@@ -68,15 +71,15 @@ export default function CertificationSection({ refs }) {
                 >
                     {
                         myCertificates.map((certficate, key) => <CardCertificate
-                                title={certficate.title}
-                                description={certficate.description}
-                                time={certficate.time}
-                                linkConfirm={certficate.linkConfirm}
-                                nameLink={certficate.nameLink}
-                                key={key}
-                                boxCertificate={boxCertificate}
-                                index={key}
-                            />
+                            title={certficate.title}
+                            description={certficate.description}
+                            time={certficate.time}
+                            linkConfirm={certficate.linkConfirm}
+                            nameLink={certficate.nameLink}
+                            key={key}
+                            boxCertificate={boxCertificate}
+                            index={key}
+                        />
                         )
                     }
                 </div>
@@ -85,8 +88,8 @@ export default function CertificationSection({ refs }) {
                     className="flex justify-center"
                 >
                     <BtnNavigation
+                        height={heightSection * 4}
                         type="arrow"
-                        position={positionNextPage()*4}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

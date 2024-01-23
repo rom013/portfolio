@@ -100,7 +100,7 @@ const ContactSection = ({ refs }) => {
                 >
                     <BtnNavigation
                         type="arrow"
-                        position={0}
+                        height={0}
                         className={"!p-0 border-none !text-white -rotate-90 !rounded-full"}
                     />
                 </div>

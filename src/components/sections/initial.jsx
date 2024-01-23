@@ -3,8 +3,7 @@ import BtnDownload from "../buttons/buttonDownload";
 import BtnNavigation from "../buttons/buttonNavigation";
 import { LinksContainer } from "../links";
 import cv from "../../assets/docs/RomulloMelo.pdf"
-import positionNextPage from "../../funcs/positionNextPage";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
@@ -15,6 +14,8 @@ export default function InitialSection({ refs }) {
     const section = useRef()
     const about = useRef()
     const imgProfile = useRef()
+
+    const [ heightSection, setHeightSection ] = useState()
 
     useEffect(() => {
         const animateSection = gsap.to(
@@ -28,6 +29,8 @@ export default function InitialSection({ refs }) {
                 opacity: 0,
             }
         )
+
+        setHeightSection(section.current.clientHeight);
 
         return () => { animateSection.kill() }
     }, [])
@@ -76,6 +79,7 @@ export default function InitialSection({ refs }) {
                             className="flex gap-10 flex-col md:flex-row md:justify-center w-full"
                         >
                             <BtnNavigation
+                                height={heightSection * 4}
                                 title={"Conhecer meus trabalhos"}
                                 position={window.innerHeight * 4}
                                 className={"w-full md:w-fit"}
@@ -87,7 +91,7 @@ export default function InitialSection({ refs }) {
                             />
                         </div>
                         <BtnNavigation
-                            position={positionNextPage()}
+                            height={heightSection}
                             type="arrow"
                             className={"!p-0 border-none !rounded-full rotate-90"}
                         />

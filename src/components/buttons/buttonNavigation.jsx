@@ -1,7 +1,8 @@
 import { CaretCircleRight } from "@phosphor-icons/react"
+import { memo } from "react"
 import { twMerge } from "tailwind-merge"
 
-export default function BtnNavigation({ title, position, type="default", className }){
+function BtnNavigation({ title, height, type="default", className }){
     function typeBtn(){
         switch (type) {
             case "default":
@@ -19,7 +20,7 @@ export default function BtnNavigation({ title, position, type="default", classNa
                 window.scroll(
                     {
                         behavior:"smooth", 
-                        top: position
+                        top: height
                     }
                 )
             }}
@@ -30,3 +31,5 @@ export default function BtnNavigation({ title, position, type="default", classNa
         </button>
     )
 }
+
+export default memo(BtnNavigation)

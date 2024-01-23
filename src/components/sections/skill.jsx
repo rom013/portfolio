@@ -1,16 +1,19 @@
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import mySkills from "../../db/mySkills.jsx"
 import { FooterImage } from "../footerImage.jsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import BtnNavigation from "../buttons/buttonNavigation.jsx"
-import positionNextPage from "../../funcs/positionNextPage.jsx"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function SkillSection({ refs }) {
+    const skillSection = useRef()
+    const [ heightSection, setHeightSection ] = useState()
 
     useEffect(() => {
+        setHeightSection(skillSection.current.clientHeight);
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#sectionSkill",
@@ -35,7 +38,7 @@ export default function SkillSection({ refs }) {
 
     return (
         <section
-            ref={refs.skillSection}
+            ref={skillSection}
             id="sectionSkill"
             className="flex items-center min-h-svh w-full relative"
         >
@@ -68,8 +71,8 @@ export default function SkillSection({ refs }) {
                     className="flex justify-center"
                 >
                     <BtnNavigation
+                        height={heightSection * 3}
                         type="arrow"
-                        position={positionNextPage()*3}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>

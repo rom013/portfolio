@@ -1,10 +1,9 @@
 import gsap from "gsap"
 import myWorks from "../../db/myWorks"
-import positionNextPage from "../../funcs/positionNextPage"
 import CardProjects from "../box/cardProjects"
 import BtnNavigation from "../buttons/buttonNavigation"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,9 +14,9 @@ const WorksSection = ({ refs }) => {
     const projectsSection = useRef()
     const title = useRef()
     const slideWorks = useRef()
-
+    const [heightSection, setHeightSection] = useState()
     useEffect(() => {
-
+        setHeightSection(projectsSection.current.clientHeight);
         gsap.fromTo(
             title.current,
             {
@@ -111,14 +110,14 @@ const WorksSection = ({ refs }) => {
 
                 <button
                     className="btn-style"
-                    onClick={()=>navigate("/works")}
+                    onClick={() => navigate("/works")}
                 >
                     Mais trabalhos
                 </button>
 
                 <BtnNavigation
+                    height={heightSection * 5}
                     type="arrow"
-                    position={positionNextPage() * 5}
                     className={"!p-0 border-none rotate-90 !rounded-full"}
                 />
             </main>

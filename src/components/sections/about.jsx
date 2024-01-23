@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import positionNextPage from "../../funcs/positionNextPage";
+import { useEffect, useRef, useState } from "react";
 import BtnNavigation from "../buttons/buttonNavigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +11,10 @@ export default function AboutSection({ refs }) {
     const aboutSection = useRef()
     const contentAbout = useRef()
 
+    const [ heightSection, setHeightSection ] = useState()
+
     useEffect(() => {
+        setHeightSection(aboutSection.current.clientHeight * 2);
 
         const timeLine = gsap.timeline({
             scrollTrigger: {
@@ -123,8 +125,8 @@ export default function AboutSection({ refs }) {
                 >
                     <p className="pointer-events-none text-sm">Continuar</p>
                     <BtnNavigation
+                        height={heightSection}
                         type="arrow"
-                        position={positionNextPage() * 2}
                         className={"!p-0 border-none rotate-90 !rounded-full"}
                     />
                 </div>
