@@ -17,27 +17,6 @@ export default function InitialSection({ refs }) {
     const imgProfile = useRef()
 
     useEffect(() => {
-        // gsap.fromTo(
-        //     about.current,
-        //     {
-        //         xPercent: -100
-        //     },
-        //     {
-        //         xPercent: 0,
-        //         duration: 2
-        //     },
-        // )
-        // gsap.fromTo(
-        //     imgProfile.current,
-        //     {
-        //         xPercent: 100
-        //     },
-        //     {
-        //         xPercent: 0,
-        //         duration: 2
-        //     },
-        // )
-
         const animateSection = gsap.to(
             section.current,
             {

@@ -17,13 +17,13 @@ const Works = () => {
         >
             <ButtonThemeMode />
             <section
-                className="max-w-5xl mx-auto w-full pt-20 pb-28 gap-6 flex flex-col"
+                className="px-8 max-w-5xl mx-auto w-full pt-20 pb-28 gap-6 flex flex-col"
             >
                 <div
                     className="flex justify-between items-center border-b-2 border-zinc-600 pb-4"
                 >
                     <h2
-                        className="text-5xl font-bold font-Sora"
+                        className="text-3xl md:text-5xl font-bold font-Sora"
                     >
                         Meus trabalhos
                     </h2>
