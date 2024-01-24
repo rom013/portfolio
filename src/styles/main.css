@@ -125,3 +125,12 @@ html {
     transform: scale(1) rotateZ(360deg);
   }
 }
+
+@keyframes opacity-in {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}

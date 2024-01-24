@@ -6,7 +6,8 @@ const myWorks = [
         description: "A plataforma SpotDev é um chat de conversas entre devs online que permite aos profissionais da área de ti se comunicarem, trocarem experiências e compartilharem conhecimentos. A plataforma oferece a possibilidade de criar fóruns de conversas específicas e comunidades sobre temas relacionados à tecnologia, programação, desenvolvimento e inovação. A plataforma tem como objetivo conectar os devs, facilitar o aprendizado e estimular a colaboração entre eles.",
         techs: ["React", "TailwindCSS", "Supabase"],
         auth: "rom013",
-        urlSite: "https://spot-dev.vercel.app/"
+        urlSite: "https://spot-dev.vercel.app/",
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199474096086466580/Video_sem_titulo_Feito_com_o_Clipchamp.mp4?ex=65c2ac4d&is=65b0374d&hm=c77b8d689507326955d66ec3058b2f603fe84ecd651114bc233ab6381c3b598f&"
     },
     {
         name: "NLW - Ignite lab",
@@ -15,7 +16,8 @@ const myWorks = [
         description: "Plataforma de video aulas",
         techs: ["React", "TailwindCSS", "TypeScript", "graphql"],
         auth: "rom013",
-        urlSite: "https://ignite-lab-aulas.vercel.app"
+        urlSite: "https://ignite-lab-aulas.vercel.app",
+        video: "" 
     },
     {
         name: "Pawsy",
@@ -24,7 +26,8 @@ const myWorks = [
         description: "A Pawsy é uma plataforma desenvolvida como parte do projeto de TCC do curso técnico em desenvolvimento de sistemas. Com o objetivo de proporcionar mais praticidade e controle na saúde dos animais de estimação.",
         techs: ["React", "TailwindCSS", "NodeJS", "Express", "MySQL"],
         auth: "Rom013",
-        urlSite: "https://pawsy-alpha.vercel.app/"
+        urlSite: "https://pawsy-alpha.vercel.app/",
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199494864866377789/screen-capture.webm?ex=65c2bfa5&is=65b04aa5&hm=b5c9c18f192616ff94375b713f1693d738216f5f61e2e29448f6fbfbf9d4e1e5&" 
     },
     {
         name: "Praia Grande",
@@ -33,7 +36,8 @@ const myWorks = [
         description: "Este site foi criado para divulgar a cidade de Praia Grande, no litoral de São Paulo, para novos visitantes. Aqui você encontra informações sobre a história da cidade, seus aspectos geopolíticos, seus eventos e seus pontos turísticos.",
         techs: ["HTML", "CSS", "Bootstrap", "Javascript"],
         auth: "Rom013",
-        urlSite: "https://rom013.github.io/praia-grande/"
+        urlSite: "https://rom013.github.io/praia-grande/",
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199497001381941319/screen-capture_2.webm?ex=65c2c1a2&is=65b04ca2&hm=19e59291f85d1a843d7d361624038261d33c02b159d103d4760f8cd20fa7a0a2&" 
     },
     {
         name: "Pokedex",
@@ -42,7 +46,38 @@ const myWorks = [
         description: "Pokedex criada em React em conjunto com a API PokeApi",
         techs: ["React", "TailwindCSS"],
         auth: "Rom013",
-        urlSite: "https://pokedex-rom013.vercel.app/"
+        urlSite: "https://pokedex-rom013.vercel.app/",
+        video: "" 
+    },
+    {
+        name: "Alerta de Ofensiva",
+        image: "https://media.discordapp.net/attachments/691421631700271114/1199423408438513754/Duo_just-ezgif.com-webp-to-gif-converter.gif?ex=65c27d18&is=65b00818&hm=08391dc31302f85d4bdf5d744c378d2cef369c69eb589ebf67d9e22e91586487&=&width=562&height=562",
+        time: "2024",
+        description: "Pokedex criada em React em conjunto com a API PokeApi",
+        techs: ["React", "TailwindCSS"],
+        auth: "Rom013",
+        urlSite: "https://pokedex-rom013.vercel.app/",
+        video: "" 
+    },
+    {
+        name: "Melo's burger",
+        image: "https://media.discordapp.net/attachments/691421631700271114/1199502163597086740/image.png?ex=65c2c671&is=65b05171&hm=43ec9300bf345d697a86e9494d34f1912996dfb67373eb310e7b42c71e933209&=&format=webp&quality=lossless&width=1187&height=667",
+        time: "2022",
+        description: "Pokedex criada em React em conjunto com a API PokeApi",
+        techs: ["HTML", "TailwindCSS", "Javascript"],
+        auth: "Rom013",
+        urlSite: "https://melo-burgers.vercel.app/",
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199505129041305740/screen-capture_3.webm?ex=65c2c934&is=65b05434&hm=9b7226c775b9cce777d3f6ab3f5d64eb1b0f9e52f31add7ea982df7003930cf5&" 
+    },
+    {
+        name: "Apollo",
+        image: "https://media.discordapp.net/attachments/691421631700271114/1199557565261021184/image.png?ex=65c2fa0a&is=65b0850a&hm=b03ec13f56482e9a2446ba04609caa0eab6d6073be69531d511867565cb2ecec&=&format=webp&quality=lossless&width=1188&height=667",
+        time: "2023",
+        description: "Plataforma de cursos",
+        techs: ["PHP", "CSS", "Javascript", "SQL"],
+        auth: "Rom013",
+        urlSite: "",
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199561476571152524/screen-capture.webm?ex=65c2fdae&is=65b088ae&hm=ad4d9bbf867c0c5b713c9b6a0462e36cab192e43fe14f4a995ccd8dcd61c3a59&" 
     },
 ]
 

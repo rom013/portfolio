@@ -4,13 +4,14 @@ import myWorks from "../db/myWorks"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import ContactSection from "../components/sections/contact"
+import CardWork from "../components/box/cardWorks"
 
 const Works = () => {
     const navigate = useNavigate()
-    
-    useEffect(()=>{
-        window.scrollTo(0,0)    
-    },[])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <main
             className="bg-zinc-50 dark:bg-zinc-950 min-h-screen dark:text-zinc-50 transition-all duration-700"
@@ -28,10 +29,10 @@ const Works = () => {
                         Meus trabalhos
                     </h2>
                     <button
-                        onClick={()=>navigate("/")}
+                        onClick={() => navigate("/")}
                         className="flex items-center gap-2"
                     >
-                        <CaretLeft/>
+                        <CaretLeft />
                         Voltar
                     </button>
                 </div>
@@ -40,52 +41,26 @@ const Works = () => {
                     className="w-full grid grid-cols-1 md:grid-cols-2 gap-16 px-8"
                 >
                     {
-                        myWorks.map(work => {
-                            return (
-                                <div
-                                    className="flex flex-col"
-                                >
-                                    <div
-                                        className="w-full flex justify-center items-center bg-zinc-200 dark:bg-zinc-700 py-12 px-5 h-[20rem] max-w-[30rem] flex-1 mb-10"
-                                    >
-                                        <img
-                                            className="aspect-video object-cover"
-                                            src={work.image}
-                                            alt=""
-                                            draggable={false}
-                                        />
-                                    </div>
-
-                                    <strong
-                                        className="text-4xl font-Lato font-normal pb-6"
-                                    >
-                                        {work.name}
-                                    </strong>
-
-                                    <div
-                                        className="flex justify-between gap-5 pt-8 border-t-2"
-                                    >
-                                        <div
-                                            className="flex gap-1"
-                                        >
-                                            {
-                                                work.techs.map(tech => {
-                                                    return <i className="text-xs text-zinc-600" >{tech}</i>
-                                                })
-                                            }
-                                        </div>
-                                        <time>{work.time}</time>
-                                    </div>
-
-                                </div>
-                            )
-                        })
+                        myWorks
+                            .sort(function (a, b) { return b.time - a.time })
+                            .map((work, key) => {
+                                return (
+                                    <CardWork
+                                        name={work.name}
+                                        techs={work.techs}
+                                        time={work.time}
+                                        urlImage={work.image}
+                                        urlVideo={work.video}
+                                        key={key}
+                                    />
+                                )
+                            })
                     }
                 </article>
 
             </section>
 
-            <ContactSection/>
+            <ContactSection />
         </main>
     )
 }
