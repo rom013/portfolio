@@ -47,7 +47,7 @@ const myWorks = [
         techs: ["React", "TailwindCSS"],
         auth: "Rom013",
         urlSite: "https://pokedex-rom013.vercel.app/",
-        video: "" 
+        video: "https://cdn.discordapp.com/attachments/691421631700271114/1199657598039883846/screen-capture_1.webm?ex=65c35733&is=65b0e233&hm=be43034eaf721d01bbd506509e4636637be9a1185e98aa2168603ed6a88d1a15&" 
     },
     {
         name: "Alerta de Ofensiva",
@@ -71,7 +71,7 @@ const myWorks = [
     },
     {
         name: "Apollo",
-        image: "https://media.discordapp.net/attachments/691421631700271114/1199557565261021184/image.png?ex=65c2fa0a&is=65b0850a&hm=b03ec13f56482e9a2446ba04609caa0eab6d6073be69531d511867565cb2ecec&=&format=webp&quality=lossless&width=1188&height=667",
+        image: "https://media.discordapp.net/attachments/691421631700271114/1199662523474006096/Frame_1_1.png?ex=65c35bca&is=65b0e6ca&hm=c781e3fd369e58ad3656c1c93c39241bd528f0592c1faa8d9b98e89cbb5526f5&=&format=webp&quality=lossless&width=1187&height=667",
         time: "2023",
         description: "Plataforma de cursos",
         techs: ["PHP", "CSS", "Javascript", "SQL"],

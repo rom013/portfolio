@@ -1,3 +1,4 @@
+import { Play } from "@phosphor-icons/react"
 import { useRef, useState } from "react"
 
 const CardWork = ({ urlVideo, name, urlImage, techs, time }) => {
@@ -18,7 +19,7 @@ const CardWork = ({ urlVideo, name, urlImage, techs, time }) => {
             className="flex flex-col"
         >
             <div
-                className="w-full flex justify-center items-center bg-zinc-200 dark:bg-zinc-700 py-12 px-5 h-[20rem] max-w-[30rem] flex-1 mb-10"
+                className="w-full group flex justify-center relative items-center bg-zinc-200 dark:bg-zinc-700 py-12 px-5 h-[20rem] max-w-[30rem] flex-1 mb-10"
                 onMouseOver={() => {
                     setShowVideo(true)
                     playVideo()
@@ -34,17 +35,23 @@ const CardWork = ({ urlVideo, name, urlImage, techs, time }) => {
                             ref={video}
                             src={urlVideo}
                             control={false}
-                            className="aspect-video object-contain transition-all duration-1000 animate-[opacity-in_linear_.4s]"
+                            className="bg-red-200 w-full h-full aspect-video object-contain transition-all duration-1000 animate-[opacity-in_linear_.4s]"
                             type="video/mp4"
                             loop
                         />
                         : <img
                             src={urlImage}
                             alt=""
-                            className="aspect-video object-contain transition-all duration-1000 animate-[opacity-in_linear_.4s]"
+                            className="aspect-video w-full h-full object-contain transition-all duration-1000 animate-[opacity-in_linear_.4s]"
                         />
 
                 }
+
+                <div
+                    className="p-2 rounded-full bg-zinc-50/50 absolute bottom-14 left-8 group-hover:hidden"
+                >
+                    <Play/>
+                </div>
             </div>
 
             <strong

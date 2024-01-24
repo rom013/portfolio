@@ -6,6 +6,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
 import { FooterContact } from "../footerImage"
+import Setup from "../../assets/img/mySetup2.webp"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -68,8 +70,8 @@ const ContactSection = ({ refs }) => {
                 className="max-w-2xl w-full h-full hidden md:block z-10"
             >
                 <img
-                    className="w-full h-full object-cover grayscale"
-                    src={"https://images.pexels.com/photos/5749818/pexels-photo-5749818.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                    className="w-full h-full object-cover"
+                    src={Setup}
                     alt="Rômullo Melo"
                     draggable={false}
                 />
