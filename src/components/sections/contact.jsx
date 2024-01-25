@@ -43,9 +43,11 @@ const ContactSection = ({ refs }) => {
             tl.fromTo(
                 `.content-${i + 1}`,
                 {
+                    opacity: 0,
                     xPercent: -100,
                 },
                 {
+                    opacity: 1,
                     xPercent: 0,
                     ease: "none"
                 }
