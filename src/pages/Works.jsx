@@ -2,15 +2,40 @@ import { CaretLeft } from "@phosphor-icons/react"
 import ButtonThemeMode from "../components/buttons/buttonThemeMode"
 import myWorks from "../db/myWorks"
 import { useNavigate } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import ContactSection from "../components/sections/contact"
 import CardWork from "../components/box/cardWorks"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Works = () => {
     const navigate = useNavigate()
+    const mainWorks = useRef()
 
     useEffect(() => {
         window.scrollTo(0, 0)
+
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: mainWorks.current,
+                scrub: 1,
+                start: "top bottom",
+                end: "bottom bottom",
+                // markers: true
+            }
+        })
+
+        myWorks.forEach((_,i)=>{
+            const select = `#box-${i}`
+            tl.fromTo(
+                select,
+                { duration: 1, y: 500, opacity: 0 },
+                { duration: 1, y: 0, opacity: 1 }
+            )
+        })
     }, [])
     return (
         <main
@@ -38,6 +63,7 @@ const Works = () => {
                 </div>
 
                 <article
+                    ref={mainWorks}
                     className="w-full grid grid-cols-1 md:grid-cols-2 gap-16 px-8"
                 >
                     {
@@ -53,6 +79,7 @@ const Works = () => {
                                         urlImage={work.image}
                                         urlVideo={work.video}
                                         key={key}
+                                        id={key}
                                     />
                                 )
                             })

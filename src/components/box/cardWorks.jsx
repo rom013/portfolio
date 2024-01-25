@@ -1,7 +1,7 @@
 import { ArrowSquareOut, Play } from "@phosphor-icons/react"
 import { useRef, useState } from "react"
 
-const CardWork = ({ urlVideo, name, urlImage, techs, time, link }) => {
+const CardWork = ({ urlVideo, name, urlImage, techs, time, link, id }) => {
 
     const [showVideo, setShowVideo] = useState(false)
     const video = useRef()
@@ -17,6 +17,7 @@ const CardWork = ({ urlVideo, name, urlImage, techs, time, link }) => {
     return (
         <div
             className="flex flex-col"
+            id={`box-${id}`}
         >
             <div
                 className="w-full group flex justify-center relative items-center bg-zinc-200 dark:bg-zinc-700 py-12 px-5 h-[20rem] max-w-[30rem] flex-1 mb-10"
