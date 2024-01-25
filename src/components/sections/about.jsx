@@ -102,8 +102,7 @@ export default function AboutSection({ refs }) {
                         <p
                             className="font-lato text-zinc-700 dark:text-zinc-200 leading-relaxed text-base"
                         >
-                            Meu nome é Rômullo Melo Oliveira, sou um programador especializado em front-end, com uma trajetória marcada por grandes projetos. Obtive minha formação em Desenvolvimento de Sistemas na ETEC Drª Ruth Cardoso, São Vicente, SP, e venho construindo minha carreira nessa área há dois anos.
-
+                            Meu nome é Rômullo Melo Oliveira, sou desenvolvedor de sistemas especializado em front-end, com uma trajetória marcada por grandes projetos.
                         </p>
                         <p
                             className="font-lato text-zinc-700 dark:text-zinc-200 leading-relaxed text-base"
