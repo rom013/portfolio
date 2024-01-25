@@ -46,6 +46,7 @@ const Works = () => {
                             .map((work, key) => {
                                 return (
                                     <CardWork
+                                        link={work.urlSite}
                                         name={work.name}
                                         techs={work.techs}
                                         time={work.time}

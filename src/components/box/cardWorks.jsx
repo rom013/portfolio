@@ -1,7 +1,7 @@
-import { Play } from "@phosphor-icons/react"
+import { ArrowSquareOut, Play } from "@phosphor-icons/react"
 import { useRef, useState } from "react"
 
-const CardWork = ({ urlVideo, name, urlImage, techs, time }) => {
+const CardWork = ({ urlVideo, name, urlImage, techs, time, link }) => {
 
     const [showVideo, setShowVideo] = useState(false)
     const video = useRef()
@@ -50,15 +50,19 @@ const CardWork = ({ urlVideo, name, urlImage, techs, time }) => {
                 <div
                     className="p-2 rounded-full bg-zinc-50/50 absolute bottom-14 left-8 group-hover:hidden"
                 >
-                    <Play/>
+                    <Play />
                 </div>
             </div>
-
-            <strong
-                className="text-4xl font-Lato font-normal pb-6"
+                
+            <a
+                href={link}
+                target="_blank"
+                title={`Navegar para ${name}`}
+                className="text-4xl font-Lato font-normal pb-6 flex gap-2"
             >
                 {name}
-            </strong>
+                <ArrowSquareOut size={16} />
+            </a>
 
             <div
                 className="flex justify-between gap-5 pt-8 border-t-2"
