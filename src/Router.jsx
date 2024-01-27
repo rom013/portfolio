@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Works from "./pages/Works"
+import ReactGA from "react-ga4"
 
 const Router = () => {
+  ReactGA.initialize("G-4Q28CZKNWK")
   return (
     <Routes>
       <Route
