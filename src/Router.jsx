@@ -5,6 +5,7 @@ import ReactGA from "react-ga4"
 
 const Router = () => {
   ReactGA.initialize("G-4Q28CZKNWK")
+  ReactGA.pageview(window.location.pathname + window.location.search);
   return (
     <Routes>
       <Route
