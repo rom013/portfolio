@@ -1,23 +1,22 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Works from "./pages/Works"
-import { Analytics } from "@vercel/analytics/react"
+import ReactGA from "react-ga4"
 
 const Router = () => {
+  ReactGA.initialize("G-4Q28CZKNWK")
+  ReactGA.pageview(window.location.pathname)
   return (
-    <>
-      <Analytics />
-      <Routes>
-        <Route
-          element={<Home />}
-          path='/'
-        />
-        <Route
-          element={<Works />}
-          path='/works'
-        />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        element={<Home />}
+        path='/'
+      />
+      <Route
+        element={<Works />}
+        path='/works'
+      />
+    </Routes>
   )
 }
 
